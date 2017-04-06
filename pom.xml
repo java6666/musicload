@@ -7,6 +7,46 @@
     <groupId>com.leting.musicload</groupId>
     <artifactId>musicload</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!--jj-->
 
+    <!--author:陈誉巧-->
+
+    <!--web项目-->
+    <packaging>war</packaging>
+
+
+    <properties>
+        <!--spring版本控制-->
+        <spring-version>4.3.7.RELEASE</spring-version>
+    </properties>
+    <!--依赖包-->
+    <dependencies>
+        <!--spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!--spring web-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+    </dependencies>
 </project>
