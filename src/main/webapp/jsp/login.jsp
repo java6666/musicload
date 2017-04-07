@@ -72,7 +72,14 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Account</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                        <c:if test="${sessionScope.get('user_name')==null}">
+                            Account
+                        </c:if>
+                        <c:if test="${sessionScope.get('user_name')!=null}">
+                            ${sessionScope.get("user_name")}
+                        </c:if>
+                    </a>
                         <div class="dropdown-menu">
                             <div class="dropdown-inner">
                                 <ul class="list-unstyled">
@@ -123,7 +130,7 @@
                         </div>
                     </li>
                     <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
-                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li><a href="/userMusic"><i class="fa fa-envelope"></i> 我的音乐</a></li>
                 </ul>
             </div>
         </div>
@@ -131,6 +138,8 @@
 
 
 </header>
+
+<%--用户登录部分--%>
 <div class="container">
     <div class="row">
         <div class="col-md-3" style="height: 480px;border-right: solid 1px sandybrown">
@@ -145,7 +154,6 @@
                     </div>
                     <div class="col-md-1">×</div>
                 </div>
-                <%--用户登录--%>
                 <form action="/login" method="post">
                     <div>
                         <label>
