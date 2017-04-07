@@ -7,8 +7,10 @@
     <!--author 张津瑞-->
     <!--自动扫描-->
     <context:component-scan base-package="musicload.controller"/>
-    <!---->
+    <!--注解驱动-->
     <mvc:annotation-driven/>
+    <!--开启静态资源管理-->
+    <mvc:resources mapping="/webmusicpages/**" location="/webmusicpages/"/>
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
 </beans>
