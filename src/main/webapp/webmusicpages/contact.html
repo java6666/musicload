@@ -116,112 +116,13 @@
 						</div>
 					</li>
 					<li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
-					<li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+					<li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	
-	<div class="header-slide">
-		<div id="owl-demo" class="owl-carousel">
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/2.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/3.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/4.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/5.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/6.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/7.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/8.jpg" />
-				</div>
-			</div>
-			<div class="item">
-				<div class="zoom-container">
-					<div class="zoom-caption">
-						<span>Video's Tag</span>
-						<a href="single.html">
-							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-						</a>
-						<p>Video's Name</p>
-					</div>
-					<img src="images/9.jpg" />
-				</div>
-			</div>
-		</div>
-	</div>
+
 </header>
 <!-- Header -->
 	
@@ -229,33 +130,32 @@
 	<div id="page-content" class="contact-page">
 		<div class="container">
 			<div class="row">
-				<div id="main-content" class="col-md-8">
-					<div class="box">
-						<center><div class="art-header">
-							<h1 class="center">Contact</h1>
-						</div></center>
-						<div class="art-content">
-							<div id="contact_form">
-								<form name="form1" id="ff" method="post" action="contact.php">
-									<label>
-									<span>Enter your name:</span>
-									<input type="text"  name="name" id="name" required>
-									</label>
-									<label>
-									<span>Enter your email:</span>
-									<input type="email"  name="email" id="email" required>
-									</label>
-									<label>
-									<span>Your message here:</span>
-									<textarea name="message" id="message"></textarea>
-									</label>
-									<center><input class="sendButton" type="submit" name="Submit" value="Submit"></center>
-								</form>
-							</div>
-						</div>
+
+				<!--显示各歌单-->
+				<div class="col-md-offset-1 col-md-2" style="border: solid 1px whitesmoke">
+					<div>
+						<p>▼创建歌单(?)<button type="button">＋</button></p>
+					</div>
+					<hr/>
+					<div>
+						<p>▼创建歌单(?)<button type="button">＋</button></p>
 					</div>
 				</div>
-				<div id="sidebar" class="col-md-4">
+				<!--显示歌单详细信息-->
+				<div id="main-content" class="col-md-6">
+					<div style="height: 50px">
+						歌单图片、歌单名、固定高度
+					</div>
+					<hr/>
+					<div>
+						歌曲列表，上线加粗
+						<table class="table">
+							<tr><th></th><th>歌曲标题</th><th>时长</th><th>歌手</th><th>专辑</th></tr>
+							<tr><td>1</td><td>歌曲标题</td><td>时长</td><td>歌手</td><td>专辑</td></tr>
+						</table>
+					</div>
+				</div>
+				<div id="sidebar" class="col-md-3">
 					<!---- Start Widget ---->
 					<div class="widget wid-follow">
 						<div class="heading"><h4><i class="fa fa-users"></i> Follow Us</h4></div>
@@ -360,157 +260,12 @@
 						</div>
 						<div class="line"></div>
 					</div>
-					<!---- Start Widget ---->
-					<div class="widget wid-news">
-						<div class="heading"><h4><i class="fa fa-clock-o"></i> Top News</h4></div>
-						<div class="content">
-							<div class="wrap-vid">
-								<div class="zoom-container">
-									<div class="zoom-caption">
-										<span>Video's Tag</span>
-										<a href="single.html">
-											<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-										</a>
-										<p>Video's Name</p>
-									</div>
-									<img src="images/3.jpg" />
-								</div>
-								<h3 class="vid-name"><a href="#">Video's Name</a></h3>
-								<div class="info">
-									<h5>By <a href="#">Kelvin</a></h5>
-									<span><i class="fa fa-calendar"></i>25/3/2015</span> 
-									<span><i class="fa fa-heart"></i>1,200</span>
-								</div>
-							</div>
-							<div class="wrap-vid">
-								<div class="zoom-container">
-									<div class="zoom-caption">
-										<span>Video's Tag</span>
-										<a href="single.html">
-											<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-										</a>
-										<p>Video's Name</p>
-									</div>
-									<img src="images/4.jpg" />
-								</div>
-								<h3 class="vid-name"><a href="#">Video's Name</a></h3>
-								<div class="info">
-									<h5>By <a href="#">Kelvin</a></h5>
-									<span><i class="fa fa-calendar"></i>25/3/2015</span> 
-									<span><i class="fa fa-heart"></i>1,200</span>
-								</div>
-							</div>
-							<div class="wrap-vid">
-								<div class="zoom-container">
-									<div class="zoom-caption">
-										<span>Video's Tag</span>
-										<a href="single.html">
-											<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
-										</a>
-										<p>Video's Name</p>
-									</div>
-									<img src="images/5.jpg" />
-								</div>
-								<h3 class="vid-name"><a href="#">Video's Name</a></h3>
-								<div class="info">
-									<h5>By <a href="#">Kelvin</a></h5>
-									<span><i class="fa fa-calendar"></i>25/3/2015</span> 
-									<span><i class="fa fa-heart"></i>1,200</span>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<footer>
-		<div class="top-footer">
-			<ul class="footer-social list-inline">
-				<li><a href="#"><i class="fa fa-twitter"></i> <span>Twitter</span></a></li>
-				<li><a href="#"><i class="fa fa-facebook"></i> <span>Facebook</span></a></li>
-				<li><a href="#"><i class="fa fa-google-plus"></i> <span>Google+</span></a></li>
-				<li><a href="#"><i class="fa fa-youtube"></i> <span>Video's Tag</span></a></li>
-				<li><a href="#"><i class="fa fa-vimeo-square"></i> <span>Vimeo</span></a></li>
-				<li><a href="#"><i class="fa fa-pinterest"></i> <span>Pinterest</span></a></li>
-				<li><a href="#"><i class="fa fa-rss"></i> <span>Rss</span></a></li>
-			</ul>  
-		</div>
-		<div class="wrap-footer">
-			<div class="container">
-				<div class="row"> 
-					<aside class="col-footer col-md-3">
-						<h2 class="footer-title">About Us</h2>
-						<div class="textwidget">Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan. <br> <br> 
-						Aenean feugiat in ante et blandit. Vestibulum posuere molestie risus, ac interdum magna porta non. Pellentesque rutrum fringilla elementum. Curabitur tincidunt porta lorem vitae accumsan.</div>
-					</aside> 
-					<aside class="col-footer col-md-3 widget_recent_entries">
-						<h2 class="footer-title">Recent Posts</h2>
-						<ul>
-							<li><a href="#">MOST VISITED COUNTRIES</a></li>
-							<li><a href="#">5 PLACES THAT MAKE A GREAT HOLIDAY</a></li>
-							<li><a href="#">PEBBLE TIME STEEL IS ON TRACK TO SHIP IN JULY</a></li>
-							<li><a href="#">STARTUP COMPANY&#8217;S CO-FOUNDER TALKS ON HIS NEW PRODUCT</a></li>
-						</ul>
-					</aside>
-					<aside class="col-footer col-md-3">
-						<h2 class="footer-title">NEWS LETTER</h2>
-						If you want to receive our latest news send directly to your email, please leave your email address bellow. Subscription is free and you can cancel anytime.
-						<form action="#" method="post">
-							<input type="text" name="your-name" value="" size="40" placeholder="Your Email" />
-							<input type="submit" value="SUBSCRIBE" class="btn btn-3" />
-						</form>
-					</aside>
-					<aside class="col-footer col-md-3 wptt_TwitterTweets">
-						<h2 class="footer-title">Twitter</h2>
-						<ul class="fetched_tweets light">
-							<li class="tweets_avatar">
-								<div class="tweet_wrap">
-									<div class="wdtf-user-card ltr">
-										<div class="clear"></div>
-									</div>
-									<div class="tweet_data"> Check out 'NewsTube - Magazine Blog &amp; Video' on <a href="#" target="_blank" rel="nofollow">#EnvatoMarket</a> <a href="#" target="_blank" rel="nofollow">#themeforest</a> <a href="http://t.co/jQV1MrQQKY" target="_blank" rel="nofollow">http://t.co/jQV1MrQQKY</a></div> <br/>
-									<div class="clear"></div>
-									<div class="times"> <em> <a href="#" target="_blank" title="Follow cactusthemes on Twitter [Opens new window]"> 2 months ago </a> </em></div>
-									<div class="clear"></div>
-								</div>
-								<div class="clear"></div>
-							</li>
-							<li class="tweets_avatar">
-								<div class="tweet_wrap">
-									<div class="wdtf-user-card ltr"><div class="clear"></div></div>
-									<div class="tweet_data"> Our latest theme 'Nano - Simple Magazine WordPress Theme' on <a href="#" target="_blank" rel="nofollow">#EnvatoMarket</a> <a href="http://twitter.com/search?q=%23themeforest" target="_blank" rel="nofollow">#themeforest</a> <a href="http://t.co/IfZTbJTk06" target="_blank" rel="nofollow">http://t.co/IfZTbJTk06</a></div> <br/>
-									<div class="clear"></div>
-									<div class="times"> <em> <a href="#" target="_blank" title="Follow cactusthemes on Twitter [Opens new window]"> 5 months ago </a> </em></div>
-									<div class="clear"></div>
-								</div>
-								<div class="clear"></div>
-							</li>
-						</ul>
-					</aside>
-				</div>
-			</div>
-		</div>
-		<div class="bottom-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 copyright">
-						<span>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span>
-					</div>
-					<div class="col-md-6 col-sm-6 link">
-						<div class="menu-footer-menu-container">
-							<ul id="menu-footer-menu" class="menu list-inline">
-								<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-								<li><a href="#"><i class="fa fa-comments"></i> Contact</a></li>
-								<li><a href="#"><i class="fa fa-question-circle"></i> FAQ</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> 
-	</footer>
+	<!--去掉footer-->
 	<!-- Footer -->
 	
 	<!-- JS -->
