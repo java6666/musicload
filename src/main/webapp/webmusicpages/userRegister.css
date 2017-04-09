@@ -11,6 +11,14 @@ select {
     margin: 20px;
    font-size: 15px;
 }
+#nickname-maxlenth{
+    width: 200px;
+    float: left;
+}
+#textarea-maxlenth{
+    width: 400px;
+    float: left;
+}
 option{
     text-align: center;
 }
@@ -18,17 +26,17 @@ option{
     float: left;
     margin-top: 20px;
 }
-.birthday-center{
-    text-align: center;
-    padding-left: 40px;
+.row-padding-left{
+   /* text-align: center;*/
+    padding-left: 80px;
 }
 textarea{
     height: 150px;
 }
-select{
+/*select{
     display: inline;
     text-align: center;
-}
+}*/
 .bg-color{
 
     background-color: #adadad;
@@ -42,4 +50,8 @@ select{
     height: 150px;
     width: 150px;
     border: solid red 1px;
+}
+#row-margin{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
