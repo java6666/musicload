@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>专辑</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+
+    <!-- jQuery -->
+    <script src="js/jquery-2.1.1.js"></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--我的css样式-->
+    <link rel="stylesheet" href="album.css">
+</head>
+<body>
+<header>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <strong>Welcome to 乐听！</strong>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="list-inline top-link link">
+                        <li><a href="index.html"><i class="fa fa-home"></i> 首页</a></li>
+                        <li><a href="contact.html"><i class="fa fa-comments"></i> 联系</a></li>
+                        <li><a href="#"><i class="fa fa-question-circle"></i> 常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navigation-->
+    <nav id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header"><span id="heading" class="visible-xs">类别</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html"><i class="fa fa-home"></i> 发现音乐</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 账户</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">登录</a></li>
+                                    <li><a href="archive.html">我的音乐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-play-circle-o"></i> 排行榜</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">乐听飙升榜</a></li>
+                                    <li><a href="archive.html">乐听新歌榜</a></li>
+                                    <li><a href="archive.html">乐听热歌榜</a></li>
+                                    <li><a href="archive.html">乐听原创歌曲榜</a></li>
+                                    <li><a href="archive.html">Text 205</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i> 专辑</a>
+                      <!--  <div class="dropdown-menu" style="margin-left: -203.625px;">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">中国TOP排行榜（港台榜）</a></li>
+                                    <li><a href="archive.html">中国TOP排行榜（内地榜）</a></li>
+                                    <li><a href="archive.html">华语金曲榜</a></li>
+                                    <li><a href="archive.html">中国嘻哈榜</a></li>
+                                    <li><a href="archive.html">KTV唛榜</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">iTunes榜</a></li>
+                                    <li><a href="archive.html">美国Billboard周榜</a></li>
+                                    <li><a href="archive.html">法国NRJ Vos Hits周榜</a></li>
+                                    <li><a href="archive.html">日本Oricon</a></li>
+                                    <li><a href="archive.html">儿歌榜</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">Text 311</a></li>
+                                    <li><a href="archive.html">Text 312</a></li>
+                                    <li><a href="archive.html#">Text 313</a></li>
+                                    <li><a href="archive.html#">Text 314</a></li>
+                                    <li><a href="archive.html">Text 315</a></li>
+                                </ul>
+                            </div>
+                        </div>-->
+                    </li>
+                    <li><a href="archive.html"><i class="fa fa-cubes"></i> 歌单</a></li>
+                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-slide">
+        <div id="owl-demo" class="owl-carousel">
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/2.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/3.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/4.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/5.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/6.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/7.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/8.jpg" />
+                </div>
+            </div>
+            <div class="item">
+                <div class="zoom-container">
+                    <div class="zoom-caption">
+                        <span>Music 标签</span>
+                        <a href="single.html">
+                            <i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+                        </a>
+                        <p>歌名</p>
+                    </div>
+                    <img src="images/9.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--body-->
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-lg-1 col-2-color"></div>
+        <div class="col-lg-10 album-padding border-left">
+            <h3>热门新碟</h3><hr/><hr/>
+            <div class="row">
+                <ul>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                </ul>
+
+            </div>
+            <h3>全部新碟</h3><hr/><hr/>
+            <div class="row">
+                <ul>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="row">
+                <ul>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                    <li class="album-float">
+                        <div class="album-img"><a href=""><img src="" >专辑cd</a> </div>
+                        <div><a href="">专辑名</a> </div>
+                        <div><a href=""> 歌手</a></div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-lg-1 col-2-color"></div>
+    </div>
+</div>
+</body>
+</html>

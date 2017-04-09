@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="musicload.model.dao.MusicDao" >
+      <select id="selectAllMusic" resultMap="mic">
+        SELECT *FROM `music`;
+      </select>
+    <select id="selectMusic" resultMap="mic">
+        SELECT * FROM `music` WHERE music_id=#{musicId}
+    </select>
+    <resultMap id="mic" type="musicload.model.entity.Music">
+        <id column="music_id" property="musicId"/>
+        <result column="music_link_address" property="musicLinkAddress"/>
+        <result column="music_name" property="musicName"/>
+        <result column="lyrics" property="lyrics"/>
+    </resultMap>
+</mapper>
