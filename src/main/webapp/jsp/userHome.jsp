@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: hasee
-  Date: 2017/4/7
-  Time: 13:01
+  Date: 2017/4/9
+  Time: 16:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>KoolTube</title>
+    <title>用户的主页</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="<c:url value="/webmusicpages/css/bootstrap.min.css"/>"  type="text/css">
@@ -30,16 +30,8 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<c:url value="/webmusicpages/font-awesome-4.4.0/css/font-awesome.min.css"/>"  type="text/css">
 
-    <!-- jQuery and Modernizr-->
-    <script src="<c:url value="/webmusicpages/js/jquery-2.1.1.js"/>"></script>
-
-    <!-- Core JavaScript Files -->
-    <script src="<c:url value="/webmusicpages/js/bootstrap.min.js"/>"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <![endif]-->
+    <!--我自己的css样式页-->
+    <link rel="stylesheet" href="<c:url value="/webmusicpages/userHome.css"/>" type="text/css">
 </head>
 <body>
 <header>
@@ -48,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6">
-                    <strong>Welcome to KOOLTUBE!</strong>
+                    <strong>Welcome to 乐听！</strong>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <ul class="list-inline top-link link">
@@ -62,6 +54,7 @@
     </nav>
 
     <!--Navigation-->
+    <!--更改头部颜色-->
     <nav id="menu" class="navbar">
         <div class="container">
             <div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
@@ -111,8 +104,8 @@
                         </div>
                     </li>
                     <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
-                    <li><a href="/userMusic"><i class="fa fa-envelope"></i> 我的音乐</a></li>
-                    <li style="margin-left: 400px" class="dropdown">
+                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li id="user" style="margin-left: 520px" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                             <c:if test="${sessionScope.get('user_name')==null}">
                                 Account
@@ -124,8 +117,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-inner">
                                 <ul class="list-unstyled">
-                                    <li><a href="/login" onclick="foo()">Login</a></li>
-                                    <li><a href="archive.html">Register</a></li>
+                                    <li><a href="/loginOut">退出</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -134,50 +126,99 @@
             </div>
         </div>
     </nav>
-
-
 </header>
-
-<%--用户登录部分--%>
-<script type="javascript">
-    function foo() {
-        var login = document.getElementById("login");
-        login.display="block";
-    }
-</script>
 <div class="container-fluid">
-        <div class="col-md-5" id="login" style="height: 480px;float: left;margin-left: 30%;margin-top: 10%">
-            <div class="row" style="height: 250px;border: solid 1px #2d2d2d">
-                <div style="background-color: #2d2d2d;color: white;height: 40px">
-                    <div class="col-md-11">
-                        <p style="line-height: 35px">乐听用户登录</p>
-                    </div>
-                    <div class="col-md-1"><button style="background-color: #2d2d2d;border: none">×</button></div>
+    <div id="row-1" class="row"></div>
+    <div id="row-2" class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8">
+            <!--用户信息显示-->
+            <div id="upper">
+                <div id="user-head">
+                    <img src="<c:url value="/webmusicpages/images/userHead.jpg"/>"/>
                 </div>
-                <form class="form" action="/login" method="post">
-                    <div class="form-group">
-                        <label for="userName">
-                            <input id="userName" style="width: 400px;margin-left: 40px" class="form-control" type="text" name="userName" placeholder="请输入用户名"/>
-                        </label>
+                <div id="user-head-brother-1">
+                    <div class="userInfo">
+                        <h4>
+                            ${sessionScope.get("user_name")}
+                        </h4>
                     </div>
-                    <div >
-                        <label for="password">
-                            <input id="password" style="width: 400px;margin-left: 40px" class="form-control" type="text" name="password" placeholder="请输入密码"/>
-                        </label>
+                    <div class="userInfo">
+                        <p><em>level：${user.level}</em></p>
                     </div>
-                    <c:if test="${notExists}">
-                        <p style="color: red;font-size: 16px">该用户名不存在</p>
-                    </c:if>
-                    <c:if test="${failInfo}">
-                        <p style="color: red;font-size: 16px">密码有误</p>
-                    </c:if>
-                    <div style="margin-left: 100px">
-                        <button type="submit"  class="btn btn-primary col-md-4">登录</button>
-                        <button type="submit"  class="btn btn-success col-md-3 col-md-offset-1">注册</button>
+                    <div class="userInfo">
+                        <p><em>gender:${user.gender}</em></p>
                     </div>
-                </form>
+                    <div class="updateInfo">
+                        <p>
+                            <button class="btn btn-danger">编辑个人资料</button>
+                        </p>
+                    </div>
+                </div>
+                <div id="user-head-brother-2">
+                    <div>
+                        <p></p>
+                        <p>个性签名：${user.signature}</p>
+                        <p>兴趣爱好：${user.hobby}</p>
+                    </div>
+                </div>
+            </div>
+            <!--用户听过的音乐显示-->
+            <div id="middle" class="container">
+                <div id="onTable" class="row">
+                    <div><h6>听歌历史</h6></div>
+                    <div><ul><li>累计听歌100首</li></ul></div>
+                </div>
+                <div class="row">
+                    <div>
+                        <table id="table-1" class="table" style="border-top: solid 2px red">
+                            <tr><td>1<button onclick="playMusic(this)">▶</button></td><td>晴天</td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>2</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>3</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>4</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>5</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td></td><td></td><td><a>&laquo;&nbsp;&nbsp;</a><span>1/20</span><a>&nbsp;&nbsp;&raquo;</a></td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--用户创建的歌单显示-->
+            <div id="create" class="container">
+                <div id="onSongForm" class="row">
+                    <div><h6>我创建的歌单(2)</h6></div>
+                </div>
+                <div id="songForm" class="row">
+                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单1</a></li></ul></div>
+                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单2</a></li></ul></div>
+                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单3</a></li></ul></div>
+                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单4</a></li></ul></div>
+                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单5</a></li></ul></div>
+                </div>
             </div>
         </div>
+        <div class="col-md-2">
+        </div>
     </div>
+    <div id="music"><audio controls><source src="http://m10.music.126.net/20170409175949/631f64266c85bd7d96f2d65f27c69e3d/ymusic/7895/bfe8/2cf1/cbc731a78bcccab4760f3300247659ce.mp3"/></audio></div>
+</div>
+<hr/>
 </body>
+<script type="text/javascript">
+    count=0;
+    function playMusic(mark) {
+        var audio = document.getElementById("audio");
+        if (count%2==0){
+            mark.innerHTML="‖";
+            audio.play();
+            audio.loop=true;
+            count++;
+        }else {
+            mark.innerHTML="▶";
+            audio.stop();
+            count++;
+        }
+    }
+</script>
 </html>

@@ -65,16 +65,6 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${sessionScope.get("user_name")}</a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-inner">
-                                <ul class="list-unstyled">
-                                    <li><a href="/login">我的主页</a></li>
-                                    <li><a href="/loginOut">退出</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-play-circle-o"></i> Video</a>
                         <div class="dropdown-menu">
                             <div class="dropdown-inner">
@@ -117,6 +107,19 @@
                     </li>
                     <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
                     <li><a href="/userMusic"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li style="margin-left: 400px" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+                            ${sessionScope.get("user_name")}
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="/userHome?userName=${sessionScope.get("user_name")}">我的主页</a></li>
+                                    <li><a href="/loginOut">退出</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

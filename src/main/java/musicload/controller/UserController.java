@@ -20,6 +20,18 @@ public class UserController {
     @Resource
     private UserDao userDao;
 
+    @RequestMapping("/register")
+    public String register(String userName,String password,Model model){
+        boolean b = userDao.insertUser(userName, password);
+        if (b){
+            model.addAttribute("successInfo","注册成功");
+        }else {
+            model.addAttribute("failInfo","该用户名已经存在");
+        }
+        return null;                                                           /*返回页面待定*/
+    }
+
+
     /**
      *  用户登录
      * @param userName key
@@ -62,4 +74,18 @@ public class UserController {
         session.removeAttribute(USER_NAME);
         return "redirect:login";
     }
+
+    /**
+     *  显示用户信息
+     * @return
+     */
+    @RequestMapping("/userHome")
+    public String userHome(String userName,Model model){
+        User user = userDao.selectByUserName(userName);
+        model.addAttribute("user",user);
+        return "/jsp/userHome.jsp";
+    }
+    
+    /*文件的上传和下载*/
+    
 }

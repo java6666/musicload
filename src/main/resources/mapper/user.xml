@@ -6,6 +6,15 @@
         <result column="password" property="password"/>
         <result column="user_head_name" property="userHeadName"/>
     </resultMap>
+    <insert id="insertUser">
+        INSERT INTO `user` (user_name, password) VALUES (#{userName},#{password})
+    </insert>
+    <update id="updatePassword">
+        UPDATE `user` SET password=#{password} where user_name=#{userName}
+    </update>
+    <update id="updateUserHeadName">
+        UPDATE `user` SET user_head_name=#{userHeadName} where user_name=#{userName}
+    </update>
     <select id="selectAll" resultMap="all">
         SELECT * FROM `user`
     </select>

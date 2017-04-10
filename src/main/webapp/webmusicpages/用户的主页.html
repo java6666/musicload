@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>用户的主页</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+
+    <!--我自己的css样式页-->
+    <link rel="stylesheet" href="userHome.css"  type="text/css">
+</head>
+<body>
+<header>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <strong>Welcome to 乐听！</strong>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <ul class="list-inline top-link link">
+                        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="contact.html"><i class="fa fa-comments"></i> Contact</a></li>
+                        <li><a href="#"><i class="fa fa-question-circle"></i> FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navigation-->
+    <!--更改头部颜色-->
+    <nav id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-play-circle-o"></i> Video</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">Text 201</a></li>
+                                    <li><a href="archive.html">Text 202</a></li>
+                                    <li><a href="archive.html">Text 203</a></li>
+                                    <li><a href="archive.html">Text 204</a></li>
+                                    <li><a href="archive.html">Text 205</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i> Category</a>
+                        <div class="dropdown-menu" style="margin-left: -203.625px;">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">Text 301</a></li>
+                                    <li><a href="archive.html">Text 302</a></li>
+                                    <li><a href="archive.html">Text 303</a></li>
+                                    <li><a href="archive.html">Text 304</a></li>
+                                    <li><a href="archive.html">Text 305</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">Text 306</a></li>
+                                    <li><a href="archive.html">Text 307</a></li>
+                                    <li><a href="archive.html">Text 308</a></li>
+                                    <li><a href="archive.html">Text 309</a></li>
+                                    <li><a href="archive.html">Text 310</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">Text 311</a></li>
+                                    <li><a href="archive.html">Text 312</a></li>
+                                    <li><a href="archive.html#">Text 313</a></li>
+                                    <li><a href="archive.html#">Text 314</a></li>
+                                    <li><a href="archive.html">Text 315</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
+                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li class="dropdown" style="margin-left: 520px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> userName</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li><a href="archive.html">Login</a></li>
+                                    <li><a href="archive.html">Register</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container-fluid">
+    <div id="row-1" class="row"></div>
+    <div id="row-2" class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8">
+            <!--用户信息显示-->
+            <div id="upper">
+                <div id="user-head">
+                    <img src="images/userHead.jpg"/>
+                </div>
+                <div id="user-head-brother-1">
+                    <div class="userInfo">
+                        <h4>
+                            userName
+                        </h4>
+                    </div>
+                    <div class="userInfo">
+                        <p><em>userLevel</em></p>
+                    </div>
+                    <div class="userInfo">
+                        <p><em>gender</em></p>
+                    </div>
+                    <div class="updateInfo">
+                        <p>
+                            <button class="btn btn-danger">编辑个人资料</button>
+                        </p>
+                    </div>
+                </div>
+                <div id="user-head-brother-2">
+                    <div>
+                        <p></p>
+                        <p>个性签名：因为有悔，所以披星戴月；因为有梦，所以奋不顾身。</p>
+                        <p>兴趣爱好：摇滚    &nbsp;电音</p>
+                    </div>
+                </div>
+            </div>
+            <!--用户听过的音乐显示-->
+            <div id="middle" class="container">
+                <div id="onTable" class="row">
+                    <div><h6>听歌历史</h6></div>
+                    <div><ul><li>累计听歌100首</li></ul></div>
+                </div>
+                <div class="row">
+                    <div>
+                        <table id="table-1" class="table" style="border-top: solid 2px red">
+                            <tr><td>1<button onclick="playMusic(this)">▶</button></td><td>晴天</td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>2</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>3</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>4</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>5</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td></td><td></td><td><a>&laquo;&nbsp;&nbsp;</a><span>1/20</span><a>&nbsp;&nbsp;&raquo;</a></td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--用户创建的歌单显示-->
+            <div id="create" class="container">
+                <div id="onSongForm" class="row">
+                    <div><h6>我创建的歌单(2)</h6></div>
+                </div>
+                <div id="songForm" class="row">
+                    <div><a><img src="images/formPicture.jpg"/></a><ul class="songFormImg"><li><a>歌单1</a></li></ul></div>
+                    <div><a><img src="images/formPicture.jpg"/></a><ul class="songFormImg"><li><a>歌单2</a></li></ul></div>
+                    <div><a><img src="images/formPicture.jpg"/></a><ul class="songFormImg"><li><a>歌单3</a></li></ul></div>
+                    <div><a><img src="images/formPicture.jpg"/></a><ul class="songFormImg"><li><a>歌单4</a></li></ul></div>
+                    <div><a><img src="images/formPicture.jpg"/></a><ul class="songFormImg"><li><a>歌单5</a></li></ul></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div id="music"><audio controls><source src="http://m10.music.126.net/20170408221146/f8b420227351917c1c05e2aff3c41ac6/ymusic/dc26/6e63/6bde/d08add8397181cefb1014a7b09ee4a92.mp3"/></audio></div>
+</div>
+<hr/>
+</body>
+<script type="text/javascript">
+    count=0;
+    function playMusic(mark) {
+        var audio = document.getElementById("audio");
+        if (count%2==0){
+            mark.innerHTML="‖";
+            audio.play();
+            audio.loop=true;
+            count++;
+        }else {
+            mark.innerHTML="▶";
+            audio.stop();
+            count++;
+        }
+    }
+</script>
+</html>
