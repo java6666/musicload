@@ -5,6 +5,7 @@ import musicload.model.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -86,6 +87,31 @@ public class UserController {
         return "/jsp/userHome.jsp";
     }
     
-    /*文件的上传和下载*/
-    
+    /*显示编辑个人资料*/
+    @RequestMapping(value = "/userEdit",method = RequestMethod.GET)
+    public String userEdit(Model model,HttpSession session){
+        String userName = (String) session.getAttribute(USER_NAME);
+        User user = userDao.selectByUserName(userName);
+        model.addAttribute("user",user);
+        return "/jsp/userEdit.jsp";
+    }
+
+    /*修改性别爱好签名*/
+    @RequestMapping(value = "/userEdit",method = RequestMethod.POST)
+    public String userEdit(String signature,String hobby,Model model,HttpSession session){
+        String userName = (String) session.getAttribute(USER_NAME);
+        User user1=new User();
+        user1.setUserName(userName);
+        if (signature!=null&&!signature.isEmpty()) {
+            user1.setSignature(signature);
+            userDao.updateUserSignature(user1);
+        }
+        if (hobby!=null&&!hobby.isEmpty()) {
+            user1.setHobby(hobby);
+            userDao.updateUserHobby(user1);
+        }
+        User user = userDao.selectByUserName(userName);
+        model.addAttribute("user",user);
+        return "/jsp/userEdit.jsp";
+    }
 }

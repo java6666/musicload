@@ -86,27 +86,6 @@
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i> Category</a>
                         <div class="dropdown-menu" style="margin-left: -203.625px;">
                             <div class="dropdown-inner">
-                                <ul class="list-unstyled">
-                                    <li><a href="archive.html">Text 301</a></li>
-                                    <li><a href="archive.html">Text 302</a></li>
-                                    <li><a href="archive.html">Text 303</a></li>
-                                    <li><a href="archive.html">Text 304</a></li>
-                                    <li><a href="archive.html">Text 305</a></li>
-                                </ul>
-                                <ul class="list-unstyled">
-                                    <li><a href="archive.html">Text 306</a></li>
-                                    <li><a href="archive.html">Text 307</a></li>
-                                    <li><a href="archive.html">Text 308</a></li>
-                                    <li><a href="archive.html">Text 309</a></li>
-                                    <li><a href="archive.html">Text 310</a></li>
-                                </ul>
-                                <ul class="list-unstyled">
-                                    <li><a href="archive.html">Text 311</a></li>
-                                    <li><a href="archive.html">Text 312</a></li>
-                                    <li><a href="archive.html#">Text 313</a></li>
-                                    <li><a href="archive.html#">Text 314</a></li>
-                                    <li><a href="archive.html">Text 315</a></li>
-                                </ul>
                             </div>
                         </div>
                     </li>
@@ -146,38 +125,38 @@
     }
 </script>
 <div class="container-fluid">
-        <div class="col-md-5" id="login" style="height: 480px;float: left;margin-left: 30%;margin-top: 10%">
-            <div class="row" style="height: 250px;border: solid 1px #2d2d2d">
-                <div style="background-color: #2d2d2d;color: white;height: 40px">
-                    <div class="col-md-11">
-                        <p style="line-height: 35px">乐听用户登录</p>
+    <div class="col-md-5" id="login" style="height: 480px;float: left;margin-left: 30%;margin-top: 10%">
+                <div class="row" style="height: 250px;border: solid 1px #2d2d2d">
+                    <div style="background-color: #2d2d2d;color: white;height: 40px">
+                        <div class="col-md-11">
+                            <p style="line-height: 35px">乐听用户登录</p>
+                        </div>
+                        <div class="col-md-1"><button style="background-color: #2d2d2d;border: none">×</button></div>
                     </div>
-                    <div class="col-md-1"><button style="background-color: #2d2d2d;border: none">×</button></div>
+                    <form class="form" action="/login" method="post">
+                        <div class="form-group">
+                            <label for="userName">
+                                <input id="userName" style="width: 400px;margin-left: 40px;border: solid gray 1px" class="form-control" type="text" name="userName" placeholder="请输入用户名"/>
+                            </label>
+                        </div>
+                        <div >
+                            <label for="password">
+                                <input id="password" style="width: 400px;margin-left: 40px;border: solid gray 1px" class="form-control" type="text" name="password" placeholder="请输入密码"/>
+                            </label>
+                        </div>
+                        <c:if test="${notExists}">
+                            <p style="color: red;font-size: 16px">该用户名不存在</p>
+                        </c:if>
+                        <c:if test="${failInfo}">
+                            <p style="color: red;font-size: 16px">密码有误</p>
+                        </c:if>
+                        <div style="margin-left: 100px">
+                            <button type="submit"  class="btn btn-primary col-md-4">登录</button>
+                            <button type="submit"  class="btn btn-success col-md-3 col-md-offset-1">注册</button>
+                        </div>
+                    </form>
                 </div>
-                <form class="form" action="/login" method="post">
-                    <div class="form-group">
-                        <label for="userName">
-                            <input id="userName" style="width: 400px;margin-left: 40px" class="form-control" type="text" name="userName" placeholder="请输入用户名"/>
-                        </label>
-                    </div>
-                    <div >
-                        <label for="password">
-                            <input id="password" style="width: 400px;margin-left: 40px" class="form-control" type="text" name="password" placeholder="请输入密码"/>
-                        </label>
-                    </div>
-                    <c:if test="${notExists}">
-                        <p style="color: red;font-size: 16px">该用户名不存在</p>
-                    </c:if>
-                    <c:if test="${failInfo}">
-                        <p style="color: red;font-size: 16px">密码有误</p>
-                    </c:if>
-                    <div style="margin-left: 100px">
-                        <button type="submit"  class="btn btn-primary col-md-4">登录</button>
-                        <button type="submit"  class="btn btn-success col-md-3 col-md-offset-1">注册</button>
-                    </div>
-                </form>
             </div>
-        </div>
-    </div>
+</div>
 </body>
 </html>
