@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="musicload.model.dao.MusicDao" >
-      <select id="selectAllMusic" resultMap="mic">
-        SELECT *FROM `music`;
+<mapper namespace="musicload.model.dao.MusicDao">
+    <select id="selectAllMusic" resultMap="mic">
+      SELECT
+           `music`.*,singer.singer_name
+           FROM
+           `music` LEFT JOIN `singer`
+            ON  music.singer_id=singer.singer_id;
       </select>
     <select id="selectMusic" resultMap="mic">
         SELECT * FROM `music` WHERE music_id=#{musicId}
@@ -12,5 +16,37 @@
         <result column="music_link_address" property="musicLinkAddress"/>
         <result column="music_name" property="musicName"/>
         <result column="lyrics" property="lyrics"/>
+        <result column="time" property="time"/>
+        <result column="soar_clicks" property="soarClicks"/>
+        <result column="singer_id" property="singer_id"/>
+        <result column="newMusic_clicks" property="newMusicClicks"/>
+        <association property="singer" javaType="musicload.model.entity.Singer">
+            <id column="singer_id" property="singerId"/>
+            <result column="singer_name" property="singerName"/>
+        </association>
+    </resultMap>
+    
+    <select id="selectAllRankingList" resultMap="rank">
+             SELECT *FROM `rankingList`;
+    </select>
+    <select id="selectSoarList" resultMap="mic">
+          SELECT
+      `music`.*,singer.singer_name
+           FROM
+           `music` LEFT JOIN `singer`
+            ON  music.singer_id=singer.singer_id
+           ORDER BY music.soar_clicks DESC ;
+    </select>
+    <select id="selectNewMusicList" resultMap="mic">
+          SELECT
+      `music`.*,singer.singer_name
+           FROM
+           `music` LEFT JOIN `singer`
+            ON  music.singer_id=singer.singer_id
+           ORDER BY music.newMusic_clicks DESC ;
+    </select>
+    <resultMap id="rank" type="musicload.model.entity.RankingList">
+        <id column="ranking_list" property="rankingList"/>
+        <result column="update_time" property="updateTime"/>
     </resultMap>
 </mapper>

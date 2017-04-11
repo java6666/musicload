@@ -34,4 +34,11 @@ div span{
 li{
     list-style: none;
     margin-top: 20px;
+    padding: 0px;
+
+}
+.music-update-time{
+
+    padding: 0px;
+    font-size: 14px;;
 }

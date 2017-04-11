@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+      var number=10;
+     var timer;
+      function addnum(){ 
+    	  if(number>=0){
+    		  
+    	   document.getElementById("p").innerHTML="数字："+(number--);
+    	
+    	  }
+      }
+      //开始按钮
+      function onSta(){
+    	  timer=setInterval("addnum()",1000);
+      }
+      //停止按钮
+      function stop(){
+    	  clearInterval(timer);
+      }
+</script>
+</head>
+<body>
+<p id="p">数字：10</p>
+<input type="button" value="开始" onclick="onSta()">
+<input type="button" value="停止" onclick="stop()"> 
+</body>
+</html>

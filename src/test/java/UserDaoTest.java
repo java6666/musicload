@@ -1,3 +1,4 @@
+/*
 import musicload.model.dao.UserDao;
 import musicload.model.entity.User;
 import org.junit.Test;
@@ -6,10 +7,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
+*/
 /**
  * UserDao测试
  * author: 陈誉巧
- */
+ *//*
+
 public class UserDaoTest {
     private ApplicationContext context = new ClassPathXmlApplicationContext("spring-mybatis.xml");
     private UserDao userDao = context.getBean(UserDao.class);
@@ -62,3 +65,4 @@ public class UserDaoTest {
         System.out.println(b);
     }*/
 }
+*/

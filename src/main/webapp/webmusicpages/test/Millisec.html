@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+    	var n=10;
+    	function number(){
+    		document.getElementById("h2").innerHTML="数字："+(n--);
+    	}
+    	function siv(){
+    		setInterval("number()",1000);
+    	}
+
+</script>
+</head>
+<body>
+<h2 id="h2">数字：10</h2>
+<input type="button" onclick="siv()" value="开始">
+</body>
+</html>
