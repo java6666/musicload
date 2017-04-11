@@ -15,6 +15,12 @@
     <update id="updateUserHeadName">
         UPDATE `user` SET user_head_name=#{userHeadName} where user_name=#{userName}
     </update>
+    <update id="updateUserSignature">
+        UPDATE `user` SET signature=#{signature} where user_name=#{userName}
+    </update>
+    <update id="updateUserHobby">
+        UPDATE `user` SET hobby=#{hobby} where user_name=#{userName}
+    </update>
     <select id="selectAll" resultMap="all">
         SELECT * FROM `user`
     </select>

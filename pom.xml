@@ -115,5 +115,31 @@
             <artifactId>pagehelper</artifactId>
             <version>5.0.0</version>
         </dependency>
+
+        <!--文件上传插件-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.2</version>
+        </dependency>
     </dependencies>
+
+    <!--build设置maven打包参数-->
+    <build>
+        <!--运行插件-->
+        <plugins>
+            <!--插件地址 groupId artifactId-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--插件运行时的参数-->
+                <configuration>
+                    <!--源文件版本-->
+                    <source>1.8</source>
+                    <!--目标文件的版本-->
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

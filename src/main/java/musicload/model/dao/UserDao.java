@@ -47,4 +47,18 @@ public interface UserDao {
      * @return boolean
      */
     boolean updateUserHeadName(User user);
+
+    /**
+     * 跟新用户签名
+     * @param user user
+     * @return boolean
+     */
+    boolean updateUserSignature(User user);
+
+    /**
+     * 跟新用户爱好
+     * @param user user
+     * @return boolean
+     */
+    boolean updateUserHobby(User user);
 }

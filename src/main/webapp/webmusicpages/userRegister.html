@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -31,11 +31,9 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
     <![endif]-->
     <!--我的css样式-->
-    <link rel="stylesheet" href="userRegister.css">
+    <link rel="stylesheet" href="css/userRegister.css">
 </head>
 <body>
 <header>
@@ -297,17 +295,21 @@
                                         <option>上海市</option>
                                     </select>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <div id="user-head">头像</div>
+                            <form action="/upload" method="post" enctype="multipart/form-data">
+                                    <div id="user-head">
+                                        <img src="" style="height: 150px;width: 150px">
+                                    </div>
+                                    <input type="file" name="alice" value=""/>
+                                    <input type="submit" value="upload"/>
+                            </form>
                         </div>
                     </div>
                     <div class="row">
                         <button type="submit" class="btn btn-danger">保存</button>
                     </div>
-
                 </form>
             </div>
         </div>

@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: hasee
-  Date: 2017/4/9
-  Time: 16:23
+  Date: 2017/4/10
+  Time: 18:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -136,8 +136,10 @@
         <div class="col-md-8">
             <!--用户信息显示-->
             <div id="upper">
-                <div id="user-head">
-                    <img src="<c:url value="/webmusicpages/images/${user.userHeadName}.png"/>"/>
+                <div>
+                    <div id="user-head">
+                    <img src="<c:url value="/webmusicpages/images/tomHead.png"/>"/>
+                    </div>
                 </div>
                 <div id="user-head-brother-1">
                     <div class="userInfo">
@@ -154,74 +156,44 @@
                             <c:if test="${!user.gender}">female</c:if>
                         </em></p>
                     </div>
-                    <div class="updateInfo">
-                        <p>
-                            <button class="btn btn-danger"><a href="/userEdit" style="color: white">编辑个人资料</a></button>
-                        </p>
-                    </div>
                 </div>
                 <div id="user-head-brother-2">
-                    <div>
-                        <p></p>
-                        <p>个性签名：${user.signature}</p>
-                        <p>兴趣爱好：${user.hobby}</p>
+                    <div style="margin-left: 25px;margin-top: 10px">
+                        <form action="/fileUpLoad" method="post" enctype="multipart/form-data">
+                            <input type="file" name="upload"/>&nbsp;&nbsp;
+                            <input class="btn btn-primary" type="submit" value="保存" style="margin-top: 30px">
+                        </form>
                     </div>
                 </div>
             </div>
-            <!--用户听过的音乐显示-->
-            <div id="middle" class="container">
-                <div id="onTable" class="row">
-                    <div><h6>听歌历史</h6></div>
-                    <div><ul><li>累计听歌100首</li></ul></div>
-                </div>
-                <div class="row">
-                    <div>
-                        <table id="table-1" class="table" style="border-top: solid 2px red">
-                            <tr><td>1<button onclick="playMusic(this)">▶</button></td><td>晴天</td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>2</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>3</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>4</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>5</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td></td><td></td><td><a>&laquo;&nbsp;&nbsp;</a><span>1/20</span><a>&nbsp;&nbsp;&raquo;</a></td></tr>
-                        </table>
+            <%----%>
+            <div>
+                <form action="/userEdit" method="post" class="form" style="margin-top: 200px">
+                    <div class="form-group">
+                        <label for="nan">性别</label>
+                        <input id="nan" type="radio" name="gender" value="true"
+                                <c:if test="${user.gender==true}">checked="checked"</c:if>/>男
+                        <label for="nv"></label>
+                        <input id="nv" type="radio" name="gender" value="false"
+                               <c:if test="${user.gender==false}">checked="checked"</c:if>/>女
                     </div>
-                </div>
-            </div>
-            <!--用户创建的歌单显示-->
-            <div id="create" class="container">
-                <div id="onSongForm" class="row">
-                    <div><h6>我创建的歌单(2)</h6></div>
-                </div>
-                <div id="songForm" class="row">
-                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单1</a></li></ul></div>
-                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单2</a></li></ul></div>
-                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单3</a></li></ul></div>
-                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单4</a></li></ul></div>
-                    <div><a><img src="<c:url value="/webmusicpages/images/formPicture.jpg"/>"/></a><ul class="songFormImg"><li><a>歌单5</a></li></ul></div>
-                </div>
+                    <div class="form-group">
+                        <label for="signature">个性签名</label>
+                        <input type="text" id="signature" name="signature" style="border: solid 1px gray"
+                               value="${user.signature}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobby">兴趣爱好</label>
+                        <input type="text" id="hobby" name="hobby" style="border: solid 1px gray"
+                               value="${user.hobby}"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-left: 215px">保存</button>
+                </form>
             </div>
         </div>
         <div class="col-md-2">
         </div>
     </div>
-    <div id="music"><audio controls><source src="http://m10.music.126.net/20170409175949/631f64266c85bd7d96f2d65f27c69e3d/ymusic/7895/bfe8/2cf1/cbc731a78bcccab4760f3300247659ce.mp3"/></audio></div>
 </div>
-<hr/>
 </body>
-<script type="text/javascript">
-    count=0;
-    function playMusic(mark) {
-        var audio = document.getElementById("audio");
-        if (count%2==0){
-            mark.innerHTML="‖";
-            audio.play();
-            audio.loop=true;
-            count++;
-        }else {
-            mark.innerHTML="▶";
-            audio.stop();
-            count++;
-        }
-    }
-</script>
 </html>
