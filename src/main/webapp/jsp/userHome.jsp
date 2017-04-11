@@ -177,7 +177,7 @@
                 <div class="row">
                     <div>
                         <table id="table-1" class="table" style="border-top: solid 2px red">
-                            <tr><td>1<button onclick="playMusic(this)">▶</button></td><td>晴天</td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>1</td><td><a class="song">晴天</a></td><td><a class="singer">歌手</a></td></tr>
                             <tr><td>2</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
                             <tr><td>3</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
                             <tr><td>4</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
@@ -204,24 +204,13 @@
         <div class="col-md-2">
         </div>
     </div>
-    <div id="music"><audio controls><source src="http://m10.music.126.net/20170409175949/631f64266c85bd7d96f2d65f27c69e3d/ymusic/7895/bfe8/2cf1/cbc731a78bcccab4760f3300247659ce.mp3"/></audio></div>
+    <%--音乐播放--%>
+    <div id="music">
+        <audio controls style="width: 1100px;margin-left: 50px">
+            <source src="<c:url value="/webmusicpages/music/晴天.mp3"/>"/>
+        </audio>
+    </div>
 </div>
 <hr/>
 </body>
-<script type="text/javascript">
-    count=0;
-    function playMusic(mark) {
-        var audio = document.getElementById("audio");
-        if (count%2==0){
-            mark.innerHTML="‖";
-            audio.play();
-            audio.loop=true;
-            count++;
-        }else {
-            mark.innerHTML="▶";
-            audio.stop();
-            count++;
-        }
-    }
-</script>
 </html>

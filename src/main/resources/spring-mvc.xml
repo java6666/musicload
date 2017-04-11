@@ -11,8 +11,6 @@
     <mvc:annotation-driven/>
     <!--开启静态资源管理css-->
     <mvc:resources mapping="/webmusicpages/**" location="/webmusicpages/"/>
-    <!--开启静态资源管理图片-->
-    <mvc:resources mapping="/headerImages/**" location="/headerImages/"/>
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
 
