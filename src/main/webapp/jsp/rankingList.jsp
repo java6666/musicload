@@ -23,6 +23,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<c:url value="/webmusicpages/css/style.css"/> ">
 
+    <script src="<c:url value="/webmusicpages/js/rankingList.js"/> "></script>
+
     <!-- Owl Carousel Assets -->
     <link href="<c:url value="/webmusicpages/owl-carousel/owl.carousel.css"/>" rel="stylesheet">
     <link href="<c:url value="/webmusicpages/owl-carousel/owl.theme.css"/>" rel="stylesheet">
@@ -198,113 +200,428 @@
         <div class="row">
             <div class="col-lg-3 border-left">
                 <ul>
-                        <li>
-                            <a href="/soarList">
-                                <span class="music-update-time" onclick="rankingList_h1()"
-                                     >乐听飙升榜</span></a><br/>
-                            <span class="music-update-time">每日更新</span>
-                        </li>
-                    <li>
-                        <a href="/newMusicList">
-                                <span class="music-update-time" onclick="rankingList_h1()">乐听新歌榜</span></a><br/>
+                    <li id="bg-color1">
+
+                            <span class="music-update-time" onclick="rankingList(1)">乐听飙升榜</span><br/>
                         <span class="music-update-time">每日更新</span>
                     </li>
-                    <li>
-                        <a href="/selectAllMusic">
-                                <span class="music-update-time" onclick="rankingList_h1()">乐听原创歌曲榜</span></a><br/>
+                    <li id="bg-color2">
+
+                            <span class="music-update-time" onclick="rankingList(2)">乐听新歌榜</span><br/>
+                        <span class="music-update-time">每日更新</span>
+                    </li>
+                    <li id="bg-color3">
+
+                            <span class="music-update-time" onclick="rankingList(3)"
+                                  id="list-3">乐听原创歌曲榜</span><br/>
                         <span class="music-update-time">每周四更新</span>
                     </li>
-                    <li>
-                        <a href="/selectAllMusic">
-                                <span class="music-update-time" onclick="rankingList_h1()">乐听热歌榜</span></a><br/>
+                    <li id="bg-color4">
+                            <span class="music-update-time" onclick="rankingList(4)">乐听热歌榜</span><br/>
                         <span class="music-update-time">每周四更新</span>
                     </li>
-                    <li>
-                        <a href="/selectAllMusic">
-                                <span class="music-update-time" onclick="rankingList_h1()">中国TOP排行榜(港台)</span></a><br/>
+                    <li id="bg-color5">
+                            <span class="music-update-time" onclick="rankingList(5)"
+                                  id="list-5">中国TOP排行榜(港台)</span><br/>
                         <span class="music-update-time">每周一更新</span>
                     </li>
-                    <li>
-                        <a href="/selectAllMusic">
-                                <span class="music-update-time" onclick="rankingList_h1()">中国TOP排行榜(内地)</span></a><br/>
+                    <li id="bg-color6">
+                            <span class="music-update-time" onclick="rankingList(6)"
+                                  id="list-6">中国TOP排行榜(内地)</span><br/>
                         <span class="music-update-time">每周一更新</span>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-9 border-left">
-                <div class="row">
-                    <div class="col-lg-2 ranking-image">图片</div>
-                    <div class="col-lg-8 ranking-message">
-                        <h1 class="ranking-title" id="leting-rankingList">乐听飙升榜</h1>
-                        <div>
-                            <span><button class="btn btn-default"><a href="">播放</a></button> </span>
-                            <span><button class="btn btn-default"><a href="">下载</a></button></span>
-                            <span><button class="btn btn-default"><a href="">分享</a></button></span>
-                            <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                <%-- 乐听飙升榜--%>
+                <div class="row" id="rankingList1" >
+                    <div class="row">
+                        <div class="col-lg-2 "><img style="height:150px;width: 200px;margin-left: 50px;margin-top: 50px" src="<c:url value="/webmusicpages/images/soarList.jpg"/> "/></div>
+                        <div class="col-lg-8 ranking-message">
+                            <h1 class="ranking-title">乐听飙升榜</h1>
+                            <div>
+                                <span><button class="btn btn-default"><a href="">播放</a></button> </span>
+                                <span><button class="btn btn-default"><a href="">下载</a></button></span>
+                                <span><button class="btn btn-default"><a href="">分享</a></button></span>
+                                <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <%--歌曲展示--%>
+                    <div class="row row-margin">
+                        <span>歌曲列表</span><span>50首歌</span>
+                        <div class="col-lg-11">
+                            <table class="table table-striped ">
+                                <ul>
+                                    <tr class="table-bordered">
+                                        <td width="100px">
+                                            <li></li>
+                                        </td>
+                                        <td width="600px">
+                                            <li>标题</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>时长</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>歌手</li>
+                                        </td>
+                                    </tr>
+                                </ul>
+                                <c:forEach items="${requestScope.musics1}" var="item">
+                                    <ul>
+                                        <tr class="table-bordered">
+                                            <td width="100px">
+                                                <li>${item.count}</li>
+                                            </td>
+                                            <td width="600px">
+                                                <li>
+                                                    <button style="border: none;background-color: white;">
+                                                        <a href="/musicClicks?id=${item.musicId}">
+                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
+                                                                 width="30px" height="30px"></a></button>
+                                                    <a href="">${item.musicName}</a>
+                                                </li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li><a href="">${item.singer.singerName}</a></li>
+                                            </td>
+                                        </tr>
+                                    </ul>
+                                </c:forEach>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="row row-margin">
-                    <span>歌曲列表</span><span>50首歌</span>
-                    <div class="col-lg-11">
-                        <table class="table table-striped ">
-                            <ol>
-                                <tr class="table-bordered">
-                                    <td width="100px">
-                                        <li></li>
-                                    </td>
-                                    <td width="600px">
-                                        <li>标题</li>
-                                    </td>
-                                    <td width="100px">
-                                        <li>时长</li>
-                                    </td>
-                                    <td width="100px">
-                                        <li>歌手</li>
-                                    </td>
-                                </tr>
-                            </ol>
-                            <c:forEach items="${requestScope.musics}" var="item">
-                                <ol>
+                <%-- 乐听新歌榜--%>
+                <div class="row " id="rankingList2" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-2 "><img style="height:150px;width: 200px;margin-left: 50px;margin-top: 50px" src="<c:url value="/webmusicpages/images/newMusic.jpg"/> "/></div>
+                        <div class="col-lg-8 ranking-message">
+                            <h1 class="ranking-title">乐听新歌榜</h1>
+                            <div>
+                                <span><button class="btn btn-default"><a href="">播放</a></button> </span>
+                                <span><button class="btn btn-default"><a href="">下载</a></button></span>
+                                <span><button class="btn btn-default"><a href="">分享</a></button></span>
+                                <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <%--歌曲展示--%>
+                    <div class="row row-margin">
+                        <span>歌曲列表</span><span>50首歌</span>
+                        <div class="col-lg-11">
+                            <table class="table table-striped ">
+                                <ul>
                                     <tr class="table-bordered">
                                         <td width="100px">
-                                            <li>1</li>
+                                            <li></li>
                                         </td>
                                         <td width="600px">
-                                            <li>
-                                                <button class="btn btn-default"><a href=""><img src="">播放</a></button>
-                                                <a href="">${item.musicName}</a>
-                                            </li>
+                                            <li>标题</li>
                                         </td>
                                         <td width="100px">
-                                            <li>${item.time}</li>
+                                            <li>时长</li>
                                         </td>
                                         <td width="100px">
-                                            <li><a href="">${item.singer.singerName}</a></li>
+                                            <li>歌手</li>
                                         </td>
                                     </tr>
-                                </ol>
-                            </c:forEach>
-                        </table>
+                                </ul>
+                                <c:forEach items="${requestScope.musics2}" var="item">
+                                    <ul>
+                                        <tr class="table-bordered">
+                                            <td width="100px">
+                                                <li>${item.count}</li>
+                                            </td>
+                                            <td width="600px">
+                                                <li>
+                                                    <button style="border: none;background-color: white;">
+                                                        <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
+                                                             width="30px" height="30px"></button>
+                                                    <a href="">${item.musicName}</a>
+                                                </li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li><a href="">${item.singer.singerName}</a></li>
+                                            </td>
+                                        </tr>
+                                    </ul>
+                                </c:forEach>
+                            </table>
+                        </div>
                     </div>
                 </div>
+                <%-- 乐听原创歌曲榜--%>
+                <div class="row " id="rankingList3" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-2 ranking-image">图片</div>
+                        <div class="col-lg-8 ranking-message">
+                            <h1 class="ranking-title">乐听原创歌曲榜</h1>
+                            <div>
+                                <span><button class="btn btn-default"><a href="">播放</a></button> </span>
+                                <span><button class="btn btn-default"><a href="">下载</a></button></span>
+                                <span><button class="btn btn-default"><a href="">分享</a></button></span>
+                                <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <%--歌曲展示--%>
+                    <div class="row row-margin">
+                        <span>歌曲列表</span><span>50首歌</span>
+                        <div class="col-lg-11">
+                            <table class="table table-striped ">
+                                <ul>
+                                    <tr class="table-bordered">
+                                        <td width="100px">
+                                            <li></li>
+                                        </td>
+                                        <td width="600px">
+                                            <li>标题</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>时长</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>歌手</li>
+                                        </td>
+                                    </tr>
+                                </ul>
+                                <c:forEach items="${requestScope.musics}" var="item">
+                                    <ul>
+                                        <tr class="table-bordered">
+                                            <td width="100px">
+                                                <li>${item.count}</li>
+                                            </td>
+                                            <td width="600px">
+                                                <li>
+                                                    <button style="border: none;background-color: white;">
+                                                        <a href="/musicClicks?id=${item.musicId}">
+                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
+                                                                 width="30px" height="30px"></a></button>
+                                                    <a href="">${item.musicName}</a>
+                                                </li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li><a href="">${item.singer.singerName}</a></li>
+                                            </td>
+                                        </tr>
+                                    </ul>
+                                </c:forEach>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <%-- 乐听热歌榜--%>
+                <div class="row " id="rankingList4" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-2 ranking-image">图片</div>
+                        <div class="col-lg-8 ranking-message">
+                            <h1 class="ranking-title">乐听热歌榜</h1>
+                            <div>
+                                <span><button class="btn btn-default"><a href="">播放</a></button> </span>
+                                <span><button class="btn btn-default"><a href="">下载</a></button></span>
+                                <span><button class="btn btn-default"><a href="">分享</a></button></span>
+                                <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <%--歌曲展示--%>
+                    <div class="row row-margin">
+                        <span>歌曲列表</span><span>50首歌</span>
+                        <div class="col-lg-11">
+                            <table class="table table-striped ">
+                                <ul>
+                                    <tr class="table-bordered">
+                                        <td width="100px">
+                                            <li></li>
+                                        </td>
+                                        <td width="600px">
+                                            <li>标题</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>时长</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>歌手</li>
+                                        </td>
+                                    </tr>
+                                </ul>
+                                <c:forEach items="${requestScope.musics}" var="item">
+                                    <ul>
+                                        <tr class="table-bordered">
+                                            <td width="100px">
+                                                <li>${item.count}</li>
+                                            </td>
+                                            <td width="600px">
+                                                <li>
+                                                    <button style="border: none;background-color: white;">
+                                                        <a href="/musicClicks?id=${item.musicId}">
+                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
+                                                                 width="30px" height="30px"></a></button>
+                                                    <a href="">${item.musicName}</a>
+                                                </li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li><a href="">${item.singer.singerName}</a></li>
+                                            </td>
+                                        </tr>
+                                    </ul>
+                                </c:forEach>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <%-- 中国TOP排行榜（港台）--%>
+                <div class="row " id="rankingList5" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-2 ranking-image">图片</div>
+                        <div class="col-lg-8 ranking-message">
+                            <h1 class="ranking-title">中国TOP排行榜（港台）</h1>
+                            <div>
+                                <span><button class="btn btn-default"><a href="">播放</a></button> </span>
+                                <span><button class="btn btn-default"><a href="">下载</a></button></span>
+                                <span><button class="btn btn-default"><a href="">分享</a></button></span>
+                                <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <%--歌曲展示--%>
+                    <div class="row row-margin">
+                        <span>歌曲列表</span><span>50首歌</span>
+                        <div class="col-lg-11">
+                            <table class="table table-striped ">
+                                <ul>
+                                    <tr class="table-bordered">
+                                        <td width="100px">
+                                            <li></li>
+                                        </td>
+                                        <td width="600px">
+                                            <li>标题</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>时长</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>歌手</li>
+                                        </td>
+                                    </tr>
+                                </ul>
+                                <c:forEach items="${requestScope.musics}" var="item">
+                                    <ul>
+                                        <tr class="table-bordered">
+                                            <td width="100px">
+                                                <li>${item.count}</li>
+                                            </td>
+                                            <td width="600px">
+                                                <li>
+                                                    <button style="border: none;background-color: white;">
+                                                        <a href="/musicClicks?id=${item.musicId}">
+                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
+                                                                 width="30px" height="30px"></a></button>
+                                                    <a href="">${item.musicName}</a>
+                                                </li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li><a href="">${item.singer.singerName}</a></li>
+                                            </td>
+                                        </tr>
+                                    </ul>
+                                </c:forEach>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <%-- 中国TOP排行榜（内地）--%>
+                <div class="row " id="rankingList6" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-2 ranking-image">图片</div>
+                        <div class="col-lg-8 ranking-message">
+                            <h1 class="ranking-title">中国TOP排行榜（内地）</h1>
+                            <div>
+                                <span><button class="btn btn-default"><a href="">播放</a></button> </span>
+                                <span><button class="btn btn-default"><a href="">下载</a></button></span>
+                                <span><button class="btn btn-default"><a href="">分享</a></button></span>
+                                <span><button class="btn btn-default"><a href="">评论</a></button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <%--歌曲展示--%>
+                    <div class="row row-margin">
+                        <span>歌曲列表</span><span>50首歌</span>
+                        <div class="col-lg-11">
+                            <table class="table table-striped ">
+                                <ul>
+                                    <tr class="table-bordered">
+                                        <td width="100px">
+                                            <li></li>
+                                        </td>
+                                        <td width="600px">
+                                            <li>标题</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>时长</li>
+                                        </td>
+                                        <td width="100px">
+                                            <li>歌手</li>
+                                        </td>
+                                    </tr>
+                                </ul>
+                                <c:forEach items="${requestScope.musics}" var="item">
+                                    <ul>
+                                        <tr class="table-bordered">
+                                            <td width="100px">
+                                                <li>${item.count}</li>
+                                            </td>
+                                            <td width="600px">
+                                                <li>
+                                                    <button style="border: none;background-color: white;">
+                                                        <a href="/musicClicks?id=${item.musicId}">
+                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
+                                                                 width="30px" height="30px"></a></button>
+                                                    <a href="">${item.musicName}</a>
+                                                </li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li><a href="">${item.singer.singerName}</a></li>
+                                            </td>
+                                        </tr>
+                                    </ul>
+                                </c:forEach>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
     </div>
+    <%--音乐播放--%>
+    <div id="music">
+        <audio controls style="width: 1100px;margin-left: 50px">
+            <source src="<c:url value="/webmusicpages/music/a.mp3"/>"/>
+        </audio>
+    </div>
 </div>
 </body>
-<script type="javascript">
-    var rankingList = document.getElementById("rankingList_type").innerHTML;
-    function rankingList_h1() {
-        document.getElementById("leting-rankingList").innerHTML = rankingList;
-    }
-</script>
-<%--<script type="javascript" >
-    var num=1;
-    var elementById = document.getElementById("number");
-    function number() {
-        elementById.innerHTML=num++;
-    }
-</script>--%>
 </html>

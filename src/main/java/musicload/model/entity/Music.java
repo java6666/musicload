@@ -14,6 +14,15 @@ public class Music {
     private Integer newMusicClicks;
    /* private  Singer singerName;*/
     private Singer singer;
+private  Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
     public Integer getNewMusicClicks() {
         return newMusicClicks;
