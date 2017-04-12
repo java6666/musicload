@@ -22,6 +22,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<c:url value="/webmusicpages/css/style.css"/>">
+    <%--test.css--%>
+    <link rel="stylesheet" href="<c:url value="/webmusicpages/css/test.css"/>">
 
     <!-- Owl Carousel Assets -->
     <link href="<c:url value="/webmusicpages/owl-carousel/owl.carousel.css"/>" rel="stylesheet">
@@ -103,7 +105,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-inner">
                                 <ul class="list-unstyled">
-                                    <li><a href="/login" onclick="foo()">Login</a></li>
+                                    <li><a onclick="showLogin()">Login</a></li>
                                     <li><a href="archive.html">Register</a></li>
                                 </ul>
                             </div>
@@ -117,46 +119,55 @@
 
 </header>
 
-<%--用户登录部分--%>
-<script type="javascript">
-    function foo() {
+<%--登录--%>
+<div class="container-fluid" style="position: relative;background-color: #31b0d5">
+    <div id="one">1</div>
+    <div class="col-md-5" id="login">
+        <div class="row" style="height: 250px;border: solid 1px #2d2d2d">
+            <div style="background-color: #2d2d2d;color: white;height: 40px">
+                <div class="col-md-11">
+                    <p style="line-height: 35px">乐听用户登录</p>
+                </div>
+                <div class="col-md-1"><button onclick="hide()" style="background-color: #2d2d2d;border: none">×</button></div>
+            </div>
+            <form class="form" action="/login" method="post">
+                <div class="form-group">
+                    <label for="userName">
+                        <input id="userName" style="width: 400px;margin-left: 40px;border: solid gray 1px" class="form-control" type="text" name="userName" placeholder="请输入用户名"/>
+                    </label>
+                </div>
+                <div >
+                    <label for="password">
+                        <input id="password" style="width: 400px;margin-left: 40px;border: solid gray 1px" class="form-control" type="password" name="password" placeholder="请输入密码"/>
+                    </label>
+                </div>
+                <c:if test="${notExists}">
+                    <p style="color: red;font-size: 16px">该用户名不存在</p>
+                </c:if>
+                <c:if test="${failInfo}">
+                    <p style="color: red;font-size: 16px">密码有误</p>
+                </c:if>
+                <div style="margin-left: 100px">
+                    <button type="submit"  class="btn btn-primary col-md-4">登录</button>
+                    <button type="submit"  class="btn btn-success col-md-3 col-md-offset-1">
+                        <a style="color: white">注册</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%--注册--%>
+
+</body>
+<script>
+    function showLogin() {
         var login = document.getElementById("login");
-        login.display="block";
+        login.style.display="block";
+    }
+    function hide() {
+        var login = document.getElementById("login");
+        login.style.display="none";
     }
 </script>
-<div class="container-fluid">
-    <div class="col-md-5" id="login" style="height: 480px;float: left;margin-left: 30%;margin-top: 10%">
-                <div class="row" style="height: 250px;border: solid 1px #2d2d2d">
-                    <div style="background-color: #2d2d2d;color: white;height: 40px">
-                        <div class="col-md-11">
-                            <p style="line-height: 35px">乐听用户登录</p>
-                        </div>
-                        <div class="col-md-1"><button style="background-color: #2d2d2d;border: none">×</button></div>
-                    </div>
-                    <form class="form" action="/login" method="post">
-                        <div class="form-group">
-                            <label for="userName">
-                                <input id="userName" style="width: 400px;margin-left: 40px;border: solid gray 1px" class="form-control" type="text" name="userName" placeholder="请输入用户名"/>
-                            </label>
-                        </div>
-                        <div >
-                            <label for="password">
-                                <input id="password" style="width: 400px;margin-left: 40px;border: solid gray 1px" class="form-control" type="text" name="password" placeholder="请输入密码"/>
-                            </label>
-                        </div>
-                        <c:if test="${notExists}">
-                            <p style="color: red;font-size: 16px">该用户名不存在</p>
-                        </c:if>
-                        <c:if test="${failInfo}">
-                            <p style="color: red;font-size: 16px">密码有误</p>
-                        </c:if>
-                        <div style="margin-left: 100px">
-                            <button type="submit"  class="btn btn-primary col-md-4">登录</button>
-                            <button type="submit"  class="btn btn-success col-md-3 col-md-offset-1">注册</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-</div>
-</body>
 </html>

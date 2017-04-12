@@ -18,4 +18,6 @@ public interface MusicDao {
     * @return music
     * */
     Music selectMusic(Integer musicId);
+
+
 }

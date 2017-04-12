@@ -104,7 +104,7 @@
                         </div>
                     </li>
                     <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
-                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li><a href="/userMusic"><i class="fa fa-envelope"></i> 我的音乐</a></li>
                     <li id="user" style="margin-left: 520px" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                             <c:if test="${sessionScope.get('user_name')==null}">
@@ -137,7 +137,7 @@
             <!--用户信息显示-->
             <div id="upper">
                 <div id="user-head">
-                    <img src="<c:url value="/webmusicpages/images/${user.userHeadName}.png"/>"/>
+                    <img src="<c:url value="upload/${user.userHeadName}.png"/>"/>
                 </div>
                 <div id="user-head-brother-1">
                     <div class="userInfo">
@@ -171,8 +171,8 @@
             <!--用户听过的音乐显示-->
             <div id="middle" class="container">
                 <div id="onTable" class="row">
-                    <div><h6>听歌历史</h6></div>
-                    <div><ul><li>累计听歌100首</li></ul></div>
+                    <div><h6>下载历史</h6></div>
+                    <div><ul><li>累计下载100首</li></ul></div>
                 </div>
                 <div class="row">
                     <div>
@@ -207,7 +207,7 @@
     <%--音乐播放--%>
     <div id="music">
         <audio controls style="width: 1100px;margin-left: 50px">
-            <source src="<c:url value="/webmusicpages/music/晴天.mp3"/>"/>
+            <source src="<c:url value="/webmusicpages/music/a.mp3"/>"/>
         </audio>
     </div>
 </div>

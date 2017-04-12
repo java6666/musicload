@@ -104,7 +104,7 @@
                         </div>
                     </li>
                     <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
-                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li><a href="/userMusic"><i class="fa fa-envelope"></i> 我的音乐</a></li>
                     <li id="user" style="margin-left: 520px" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                             <c:if test="${sessionScope.get('user_name')==null}">
@@ -117,6 +117,7 @@
                         <div class="dropdown-menu">
                             <div class="dropdown-inner">
                                 <ul class="list-unstyled">
+                                    <li><a href="/userHome?userName=${sessionScope.get("user_name")}">我的主页</a></li>
                                     <li><a href="/loginOut">退出</a></li>
                                 </ul>
                             </div>
@@ -137,8 +138,8 @@
             <!--用户信息显示-->
             <div id="upper">
                 <div>
-                    <div id="user-head">
-                    <img src="<c:url value="/webmusicpages/images/tomHead.png"/>"/>
+                    <div id="user-head" onclick="foo()">
+                    <img src="<c:url value="/upload/tomHead.png"/>"/>
                     </div>
                 </div>
                 <div id="user-head-brother-1">
@@ -160,8 +161,14 @@
                 <div id="user-head-brother-2">
                     <div style="margin-left: 25px;margin-top: 10px">
                         <form action="/fileUpLoad" method="post" enctype="multipart/form-data">
-                            <input type="file" name="upload"/>&nbsp;&nbsp;
-                            <input class="btn btn-primary" type="submit" value="保存" style="margin-top: 30px">
+                            <script>
+                                function foo() {
+                                    var file = document.getElementById("testJs");
+                                    file.click();
+                                }
+                            </script>
+                            <input id="testJs" type="file" name="upload" style="display: none"/>
+                            <input class="btn btn-primary" type="submit" value="保存" style="margin-top: 50px">
                         </form>
                     </div>
                 </div>
@@ -187,7 +194,7 @@
                         <input type="text" id="hobby" name="hobby" style="border: solid 1px gray"
                                value="${user.hobby}"/>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="margin-left: 215px">保存</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left: 205px">保存</button>
                 </form>
             </div>
         </div>

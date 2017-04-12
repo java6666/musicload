@@ -9,8 +9,8 @@
     <context:component-scan base-package="musicload.controller"/>
     <!--注解驱动-->
     <mvc:annotation-driven/>
-    <!--开启静态资源管理css-->
-    <mvc:resources mapping="/webmusicpages/**" location="/webmusicpages/"/>
+    <!--开启静态资源管理,匹配不到的给tomcat-->
+    <mvc:default-servlet-handler/>
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
 

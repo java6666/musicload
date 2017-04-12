@@ -1,7 +1,10 @@
 package musicload.controller;
 
+import com.github.pagehelper.PageInfo;
 import musicload.model.dao.UserDao;
+import musicload.model.dao.UserMusicDao;
 import musicload.model.entity.User;
+import musicload.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/4/6.
@@ -20,6 +24,9 @@ public class UserController {
 
     @Resource
     private UserDao userDao;
+
+    @Resource
+    private UserService userService;
 
     @RequestMapping("/register")
     public String register(String userName,String password,Model model){
@@ -77,13 +84,14 @@ public class UserController {
     }
 
     /**
-     *  显示用户信息
+     *  显示用户信息,用户下载历史信息
      * @return
      */
     @RequestMapping("/userHome")
     public String userHome(String userName,Model model){
         User user = userDao.selectByUserName(userName);
         model.addAttribute("user",user);
+        /**/
         return "/jsp/userHome.jsp";
     }
     

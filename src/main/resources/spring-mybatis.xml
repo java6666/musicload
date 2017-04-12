@@ -6,6 +6,7 @@
     <!--author：陈誉巧-->
     <!--自动扫描-->
     <context:component-scan base-package="musicload.model"/>
+    <context:component-scan base-package="musicload.service"/>
 
     <!--引入property配置文件-->
     <context:property-placeholder location="classpath*:jdbc.properties"/>
