@@ -169,3 +169,28 @@ INSERT INTO `user_music` VALUES ('8', '8', 'tom', '不该', '周杰伦', '2017-0
 INSERT INTO `user_music` VALUES ('9', '9', 'tom', '土耳其冰淇淋', '周杰伦', '2017-04-12 16:14:34');
 INSERT INTO `user_music` VALUES ('10', '10', 'tom', '告白气球', '周杰伦', '2017-04-12 16:14:38');
 INSERT INTO `user_music` VALUES ('11', '11', 'tom', '爱情废柴', '周杰伦', '2017-04-12 16:14:42');
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `user_name` varchar(16) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `user_head_name` varchar(255) DEFAULT NULL,
+  `signature` varchar(255) DEFAULT NULL,
+  `level` smallint(2) DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT NULL,
+  `hobby` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`user_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('jack', '66036', 'jackHead', null, null, null, null);
+INSERT INTO `user` VALUES ('meimei', '88064', 'meimeiHead', null, null, null, null);
+INSERT INTO `user` VALUES ('rose', '77049', 'roseHead', null, null, null, null);
+INSERT INTO `user` VALUES ('tom', '77049', 'tomHead', '因为有悔，所以披星戴月；因为有梦，所以奋不顾身。', '7', '0', 'java');
