@@ -1,10 +1,8 @@
 package musicload.controller;
 
-import com.github.pagehelper.PageInfo;
+
 import musicload.model.dao.UserDao;
-import musicload.model.dao.UserMusicDao;
 import musicload.model.entity.User;
-import musicload.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 /**
- * Created by Administrator on 2017/4/6.
+ * @author 陈誉巧
  */
 @Controller
 public class UserController {
@@ -25,18 +22,27 @@ public class UserController {
     @Resource
     private UserDao userDao;
 
-    @Resource
-    private UserService userService;
-
+    /**
+     * 用户注册
+     * @param userName username
+     * @param password password
+     * @param model model
+     * @return
+     */
     @RequestMapping("/register")
     public String register(String userName,String password,Model model){
         boolean b = userDao.insertUser(userName, password);
         if (b){
-            model.addAttribute("successInfo","注册成功");
+            /*注册成功*/
+            model.addAttribute("userName",userName);
+            model.addAttribute("password",password);
+            return "redirect:login";
         }else {
+            /*注册失败*/
             model.addAttribute("failInfo","该用户名已经存在");
+            return "/jsp/login.jsp";
         }
-        return null;                                                           /*返回页面待定*/
+        /*返回页面待定*/
     }
 
 
