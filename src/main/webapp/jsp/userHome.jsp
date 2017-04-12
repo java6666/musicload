@@ -104,7 +104,7 @@
                         </div>
                     </li>
                     <li><a href="archive.html"><i class="fa fa-cubes"></i> Blocks</a></li>
-                    <li><a href="contact.html"><i class="fa fa-envelope"></i> 我的音乐</a></li>
+                    <li><a href="/userMusic"><i class="fa fa-envelope"></i> 我的音乐</a></li>
                     <li id="user" style="margin-left: 520px" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                             <c:if test="${sessionScope.get('user_name')==null}">
@@ -137,7 +137,7 @@
             <!--用户信息显示-->
             <div id="upper">
                 <div id="user-head">
-                    <img src="<c:url value="/webmusicpages/images/${user.userHeadName}.png"/>"/>
+                    <img src="<c:url value="upload/${user.userHeadName}.png"/>"/>
                 </div>
                 <div id="user-head-brother-1">
                     <div class="userInfo">
@@ -171,13 +171,13 @@
             <!--用户听过的音乐显示-->
             <div id="middle" class="container">
                 <div id="onTable" class="row">
-                    <div><h6>听歌历史</h6></div>
-                    <div><ul><li>累计听歌100首</li></ul></div>
+                    <div><h6>下载历史</h6></div>
+                    <div><ul><li>累计下载100首</li></ul></div>
                 </div>
                 <div class="row">
                     <div>
                         <table id="table-1" class="table" style="border-top: solid 2px red">
-                            <tr><td>1<button onclick="playMusic(this)">▶</button></td><td>晴天</td><td><a class="singer">歌手</a></td></tr>
+                            <tr><td>1</td><td><a class="song">晴天</a></td><td><a class="singer">歌手</a></td></tr>
                             <tr><td>2</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
                             <tr><td>3</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
                             <tr><td>4</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
@@ -204,24 +204,13 @@
         <div class="col-md-2">
         </div>
     </div>
-    <div id="music"><audio controls><source src="http://m10.music.126.net/20170409175949/631f64266c85bd7d96f2d65f27c69e3d/ymusic/7895/bfe8/2cf1/cbc731a78bcccab4760f3300247659ce.mp3"/></audio></div>
+    <%--音乐播放--%>
+    <div id="music">
+        <audio controls style="width: 1100px;margin-left: 50px">
+            <source src="<c:url value="/webmusicpages/music/a.mp3"/>"/>
+        </audio>
+    </div>
 </div>
 <hr/>
 </body>
-<script type="text/javascript">
-    count=0;
-    function playMusic(mark) {
-        var audio = document.getElementById("audio");
-        if (count%2==0){
-            mark.innerHTML="‖";
-            audio.play();
-            audio.loop=true;
-            count++;
-        }else {
-            mark.innerHTML="▶";
-            audio.stop();
-            count++;
-        }
-    }
-</script>
 </html>

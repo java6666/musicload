@@ -32,4 +32,6 @@ public interface MusicDao {
     * 新歌榜
     * */
     List<Music> selectNewMusicList();
+
+
 }

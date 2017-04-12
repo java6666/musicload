@@ -61,4 +61,6 @@ public interface UserDao {
      * @return boolean
      */
     boolean updateUserHobby(User user);
+
+
 }
