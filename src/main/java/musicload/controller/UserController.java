@@ -97,7 +97,6 @@ public class UserController {
     public String userHome(String userName,Model model){
         User user = userDao.selectByUserName(userName);
         model.addAttribute("user",user);
-        /**/
         return "/jsp/userHome.jsp";
     }
     

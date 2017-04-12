@@ -73,3 +73,34 @@ CREATE TABLE `user` (
   `user_image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for user_music
+-- ----------------------------
+DROP TABLE IF EXISTS `user_music`;
+CREATE TABLE `user_music` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `music_id` int(11) DEFAULT NULL,
+  `user_name` varchar(16) DEFAULT NULL,
+  `music_name` varchar(255) DEFAULT NULL,
+  `singer_name` varchar(255) DEFAULT NULL,
+  `download_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_music
+-- ----------------------------
+INSERT INTO `user_music` VALUES ('1', '1', 'tom', '晴天', '周杰伦', '2017-04-12 16:14:04');
+INSERT INTO `user_music` VALUES ('2', '2', 'tom', '床边故事', '周杰伦', '2017-04-12 16:14:10');
+INSERT INTO `user_music` VALUES ('3', '3', 'tom', '说走就走', '周杰伦', '2017-04-12 16:14:14');
+INSERT INTO `user_music` VALUES ('4', '4', 'tom', '一点点', '周杰伦', '2017-04-12 16:14:17');
+INSERT INTO `user_music` VALUES ('5', '5', 'tom', '前世情人', '周杰伦', '2017-04-12 16:14:21');
+INSERT INTO `user_music` VALUES ('6', '6', 'tom', '英雄', '周杰伦', '2017-04-12 16:14:24');
+INSERT INTO `user_music` VALUES ('7', '7', 'tom', '前世情人', '周杰伦', '2017-04-12 16:14:28');
+INSERT INTO `user_music` VALUES ('8', '8', 'tom', '不该', '周杰伦', '2017-04-12 16:14:31');
+INSERT INTO `user_music` VALUES ('9', '9', 'tom', '土耳其冰淇淋', '周杰伦', '2017-04-12 16:14:34');
+INSERT INTO `user_music` VALUES ('10', '10', 'tom', '告白气球', '周杰伦', '2017-04-12 16:14:38');
+INSERT INTO `user_music` VALUES ('11', '11', 'tom', '爱情废柴', '周杰伦', '2017-04-12 16:14:42');

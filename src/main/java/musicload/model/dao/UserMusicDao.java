@@ -5,8 +5,9 @@ import musicload.model.entity.UserMusic;
 import java.util.List;
 
 /**
- * Created by hasee on 2017/4/11.
+ * @author 陈誉巧
  */
 public interface UserMusicDao {
     List<UserMusic> selectByUserName(String userName);
+    List<UserMusic> selectAll();
 }

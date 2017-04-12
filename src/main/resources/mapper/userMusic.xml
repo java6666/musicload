@@ -9,4 +9,7 @@
     <select id="selectByUserName" resultMap="ss">
         SELECT * FROM `user_music` WHERE `user_name`=#{userName}
     </select>
+    <select id="selectAll" resultType="musicload.model.entity.UserMusic">
+        SELECT * FROM `user_music`
+    </select>
 </mapper>
