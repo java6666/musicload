@@ -22,6 +22,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<c:url value="/webmusicpages/css/style.css"/>">
+    <%--引入本业content的样式--%>
+    <link rel="stylesheet" href="<c:url value="/webmusicpages/css/userMusic.css"/>">
 
     <!-- Owl Carousel Assets -->
     <link href="<c:url value="/webmusicpages/owl-carousel/owl.carousel.css"/>" rel="stylesheet">
@@ -62,7 +64,7 @@
             <div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
                 <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse navbar-ex1-collapse" >
                 <ul class="nav navbar-nav">
                     <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-play-circle-o"></i> Video</a>
@@ -124,42 +126,83 @@
             </div>
         </div>
     </nav>
-
-
 </header>
 
 <!-- /////////////////////////////////////////Content -->
 <div id="page-content" class="contact-page">
-    <div class="container">
-        <div class="row">
-
-            <!--显示各歌单-->
-            <div class="col-md-offset-1 col-md-2" style="border: solid 1px whitesmoke">
-                <div>
-                    <p>▼创建歌单(?)<button type="button">＋</button></p>
-                </div>
-                <hr/>
-                <div>
-                    <p>▼创建歌单(?)<button type="button">＋</button></p>
-                </div>
+    <div class="container-fluid" id="container">
+        <div id="row1" class="row">
+            <div id="col1" class="col-md-1"></div>
+            <%--导航栏--%>
+            <div id="col2" class="col-md-2">
+                <div class="row" style="height: 30px"></div>
+                <%--导航表格--%>
+                <table id="table1" class="table table-hover">
+                    <tr>
+                        <td style="border-top: none">我的歌手(0)</td>
+                    </tr>
+                    <tr>
+                        <td style="border-top: none" onclick="showCreateBar(this,'createForm')">
+                            创建的歌单(10)
+                        </td>
+                    </tr>
+                    <%--如果有显示--%>
+                    <%--<c:if test="">--%>
+                    <tr class="createForm" style="display: none">
+                            <td style="border-top: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                歌单名
+                            </td>
+                    </tr>
+                    <%--</c:if>--%>
+                    <tr>
+                        <td style="border-top: none" onclick="showCreateBar(this,'collectForm')">
+                            收藏的歌单(10)
+                        </td>
+                    </tr>
+                   <%-- <c:if test="">--%>
+                        <tr class="collectForm" style="display: none">
+                            <td style="border-top: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                歌单名
+                            </td>
+                        </tr>
+                    <%--</c:if>--%>
+                </table>
             </div>
-            <!--显示歌单详细信息-->
-            <div id="main-content" class="col-md-6">
-                <div style="height: 50px">
-                    歌单图片、歌单名、固定高度
-                </div>
-                <hr/>
-                <div>
-                    歌曲列表，上线加粗
+            <div id="col3" class="col-md-7" style="position: relative">
+                <div id="content-1">
+                    <div class="content-x-top">
+                        <h3 class="content-x-top-h1">我的歌手(0)</h3>
+                    </div>
                     <table class="table">
-                        <tr><th></th><th>歌曲标题</th><th>时长</th><th>歌手</th><th>专辑</th></tr>
-                        <tr><td>1</td><td>歌曲标题</td><td>时长</td><td>歌手</td><td>专辑</td></tr>
+                        <tr>
+                            <td style="width:100px;height:100px">
+                                <img src="" style="height: 100px;width: 100px"/>
+                            </td>
+                            <td style="width:500px;height:100px">
+                                <h6>伍佰</h6>
+                                <p>28个专辑</p>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
+            <div id="col4" class="col-md-2"></div>
         </div>
     </div>
 </div>
-</div>
 </body>
+<script>
+    function showCreateBar(mark,className) {
+        var createForms = document.getElementsByClassName(className);
+        for (var i=0;i<=createForms.length;i++){
+            if(createForms[i].style.display=="block"){
+                createForms[i].style.display="none";
+                mark.style.color="black";
+            }else {
+                createForms[i].style.display="block";
+                mark.style.color="red";
+            }
+        }
+    }
+</script>
 </html>

@@ -5,6 +5,9 @@
         <id column="id" property="id"/>
         <result column="music_id" property="musicId"/>
         <result column="user_name" property="userName"/>
+        <result column="music_name" property="musicName"/>
+        <result column="singer_name" property="singerName"/>
+        <result column="download_date" property="downloadDate"/>
     </resultMap>
     <select id="selectByUserName" resultMap="ss">
         SELECT * FROM `user_music` WHERE `user_name`=#{userName}

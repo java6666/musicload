@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: hasee
@@ -172,17 +173,40 @@
             <div id="middle" class="container">
                 <div id="onTable" class="row">
                     <div><h6>下载历史</h6></div>
-                    <div><ul><li>累计下载100首</li></ul></div>
+                    <div><ul><li>累计下载${pageInfo.total}首</li></ul></div>
                 </div>
                 <div class="row">
                     <div>
-                        <table id="table-1" class="table" style="border-top: solid 2px red">
-                            <tr><td>1</td><td><a class="song">晴天</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>2</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>3</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>4</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td>5</td><td><a class="song">歌名</a></td><td><a class="singer">歌手</a></td></tr>
-                            <tr><td></td><td></td><td><a>&laquo;&nbsp;&nbsp;</a><span>1/20</span><a>&nbsp;&nbsp;&raquo;</a></td></tr>
+                        <table id="table-1" class="table table-hover" style="border-top: solid 2px red">
+                            <tr style="background-color:wheat">
+                                <th></th>
+                                <th style="text-align: center">歌名</th>
+                                <th style="text-align: center">歌手</th>
+                                <th style="text-align: center">下载时间</th>
+                            </tr>
+                            <c:forEach items="${pageInfo.list}" var="item">
+                                <tr>
+                                    <td>${item.id}</td>
+                                    <td>${item.musicName}</td>
+                                    <td>${item.singerName}</td>
+                                    <td><fmt:formatDate value="${item.downloadDate}" pattern="yyyy-MM-dd"/> </td>
+                                </tr>
+                            </c:forEach>
+                            <tr>
+                               <td colspan="4">
+                                   <c:if test="${pageInfo.hasPreviousPage}">
+                                       <a href="/userHome?pageNow=${pageInfo.prePage}&userName=${user.userName}">
+                                           &laquo;&nbsp;&nbsp;
+                                       </a>
+                                   </c:if>
+                                   <span>${pageInfo.pageNum}/${pageInfo.pages}</span>
+                                   <c:if test="${pageInfo.hasNextPage}">
+                                       <a href="/userHome?pageNow=${pageInfo.nextPage}&userName=${user.userName}">
+                                           &nbsp;&nbsp;&raquo;
+                                       </a>
+                                   </c:if>
+                               </td>
+                            </tr>
                         </table>
                     </div>
                 </div>

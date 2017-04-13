@@ -1,8 +1,10 @@
 package musicload.controller;
 
 
+import com.github.pagehelper.PageInfo;
 import musicload.model.dao.UserDao;
 import musicload.model.entity.User;
+import musicload.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,8 @@ public class UserController {
 
     @Resource
     private UserDao userDao;
+    @Resource
+    private UserService userService;
 
     /**
      * 用户注册
@@ -94,8 +98,10 @@ public class UserController {
      * @return
      */
     @RequestMapping("/userHome")
-    public String userHome(String userName,Model model){
+    public String userHome(Integer pageNow,String userName,Model model){
         User user = userDao.selectByUserName(userName);
+        PageInfo pageInfo = userService.selectUserMusicByUserName(pageNow, userName);
+        model.addAttribute("pageInfo",pageInfo);
         model.addAttribute("user",user);
         return "/jsp/userHome.jsp";
     }

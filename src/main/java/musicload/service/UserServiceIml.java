@@ -21,7 +21,7 @@ public class UserServiceIml implements UserService {
     @Override
     public PageInfo selectUserMusicByUserName(Integer pageNow, String userName) {
         pageNow=pageNow==null||pageNow==0?1:pageNow;
-        PageHelper.startPage(pageNow);
+        PageHelper.startPage(pageNow,5);
         List<UserMusic> userMusics = userMusicDao.selectByUserName(userName);
         PageInfo<UserMusic> userMusicPageInfo = new PageInfo<>(userMusics);
         return userMusicPageInfo;
