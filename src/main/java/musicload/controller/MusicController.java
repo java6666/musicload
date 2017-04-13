@@ -39,16 +39,6 @@ public class MusicController {
 
 
     /*
-      * 查询音乐排行榜类型
-      * */
-    @RequestMapping(value = "/rankingList")
-    public String rankingList(Model model) {
-        List<RankingList> rankingLists = musicDao.selectAllRankingList();
-        model.addAttribute("rankingLists", rankingLists);
-        return "/jsp/rankingList.jsp";
-    }
-
-    /*
     * 飙升榜查询
     * */
     @RequestMapping(value = "/soarList")
@@ -87,12 +77,34 @@ public class MusicController {
     }
 
     /*
-    * 音乐播放,
+    * 单曲信息,
     * */
-    @RequestMapping(value = "/musicPlay")
-    public String musicPlay(Model model, Integer musicId) {
+    @RequestMapping(value = "/musicMessage")
+    public String musicMessage(Model model, Integer musicId) {
         Music music = musicDao.selectMusic(musicId);
         model.addAttribute("music", music);
+        return "/jsp/singleMessage.jsp";
+    }
+
+    /*
+    * 飙升榜音乐播放,
+    * */
+    @RequestMapping(value = "/soarMusicPlay")
+    public String musicPlay1(Model model, Integer musicId) {
+        Music music = musicDao.selectMusic(musicId);
+        model.addAttribute("music", music);
+        music.setSoarClicks(music.getSoarClicks()+1);
+        return "/jsp/rankingList.jsp";
+    }
+    /*
+     * 新歌榜音乐播放,
+     * */
+    @RequestMapping(value = "/newMusicPlay")
+    public String musicPlay2(Model model, Integer musicId) {
+        Music music = musicDao.selectMusic(musicId);
+        music.setNewMusicClicks(music.getNewMusicClicks()+1);
+        model.addAttribute("music", music);
+        music.setSoarClicks(music.getSoarClicks()+1);
         return "/jsp/rankingList.jsp";
     }
 

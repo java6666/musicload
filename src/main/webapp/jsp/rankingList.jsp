@@ -273,11 +273,11 @@
                                             <td width="600px">
                                                 <li>
                                                     <button style="border: none;background-color: white;" >
-                                                        <a href="/musicPlay?musicId=${item.musicId}">
+                                                        <a href="/soarMusicPlay?musicId=${item.musicId}">
                                                             <img src="<c:url value="/webmusicpages/images/button4.jpg"/>" width="30px" height="30px">
                                                         </a>
                                                     </button>
-                                                    <a href="">${item.musicName}</a>
+                                                    <a href="/playSingle?musicId=${item.musicId}">${item.musicName}</a>
                                                 </li>
                                             </td>
                                             <td width="100px">
@@ -342,9 +342,11 @@
                                             <td width="600px">
                                                 <li>
                                                     <button style="border: none;background-color: white;">
+                                                        <a href="/newMusicPlay?musicId=${item.musicId}">
                                                         <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
-                                                             width="30px" height="30px"></button>
-                                                    <a href="">${item.musicName}</a>
+                                                             width="30px" height="30px"></a>
+                                                    </button>
+                                                    <a href="/playSingle?musicId=${item.musicId}">${item.musicName}</a>
                                                 </li>
                                             </td>
                                             <td width="100px">
