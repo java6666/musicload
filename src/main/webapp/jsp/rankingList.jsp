@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2017/4/10
-  Time: 12:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -22,7 +15,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<c:url value="/webmusicpages/css/style.css"/> ">
-
+<%--我的js--%>
     <script src="<c:url value="/webmusicpages/js/rankingList.js"/> "></script>
 
     <!-- Owl Carousel Assets -->
@@ -264,6 +257,9 @@
                                             <li>时长</li>
                                         </td>
                                         <td width="100px">
+                                            <li></li>
+                                        </td>
+                                        <td width="100px">
                                             <li>歌手</li>
                                         </td>
                                     </tr>
@@ -276,15 +272,21 @@
                                             </td>
                                             <td width="600px">
                                                 <li>
-                                                    <button style="border: none;background-color: white;">
-                                                        <a href="/musicClicks?id=${item.musicId}">
-                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>"
-                                                                 width="30px" height="30px"></a></button>
+                                                    <button style="border: none;background-color: white;" >
+                                                        <a href="/musicPlay?musicId=${item.musicId}">
+                                                            <img src="<c:url value="/webmusicpages/images/button4.jpg"/>" width="30px" height="30px">
+                                                        </a>
+                                                    </button>
                                                     <a href="">${item.musicName}</a>
                                                 </li>
                                             </td>
                                             <td width="100px">
                                                 <li>${item.time}</li>
+                                            </td>
+                                            <td width="100px">
+                                                <li>
+                                                    <button class="btn btn-default download-font"><a href="/downloadMusic?musicId=${item.musicId}">下载</a></button>
+                                                </li>
                                             </td>
                                             <td width="100px">
                                                 <li><a href="">${item.singer.singerName}</a></li>
@@ -347,6 +349,7 @@
                                             </td>
                                             <td width="100px">
                                                 <li>${item.time}</li>
+
                                             </td>
                                             <td width="100px">
                                                 <li><a href="">${item.singer.singerName}</a></li>
@@ -610,18 +613,18 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
     </div>
     <%--音乐播放--%>
-    <div id="music">
-        <audio controls style="width: 1100px;margin-left: 50px">
-            <source src="<c:url value="/webmusicpages/music/a.mp3"/>"/>
+    <div >
+        <audio  controls="controls" style="width: 1100px;margin-left: 50px" autoplay>
+            <source src="<c:url value="/webmusicpages/music/${music.musicId}.mp3"/>"/>
         </audio>
     </div>
 </div>
+
+
 </body>
 </html>
