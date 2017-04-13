@@ -169,14 +169,14 @@
                 </table>
             </div>
             <div id="col3" class="col-md-7" style="position: relative">
-                <div id="content-1">
+                <div id="content-1" style="display: none">
                     <div class="content-x-top">
                         <h3 class="content-x-top-h1">我的歌手(0)</h3>
                     </div>
                     <table class="table">
-                        <tr>
+                        <tr style="border-bottom: solid gainsboro 1px">
                             <td style="width:100px;height:100px">
-                                <img src="" style="height: 100px;width: 100px"/>
+                                <img src="<c:url value="/webmusicpages/images/singerImages/2.jpg"/>" style="height: 100px;width: 100px"/>
                             </td>
                             <td style="width:500px;height:100px">
                                 <h6>伍佰</h6>
@@ -184,6 +184,20 @@
                             </td>
                         </tr>
                     </table>
+                </div>
+                <div id="content-2">
+                    <div class="content-x-top">
+                        <table class="table">
+                            <tr>
+                                <td style="height: 150px;width: 150px">
+                                    <img src="" style="height: 150px;width: 150px">
+                                </td>
+                                <td style="height: 150px;width: 450px">
+                                    <h6 style="font-weight: lighter"><span style="color: red">◆</span>歌单名</h6>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div id="col4" class="col-md-2"></div>
