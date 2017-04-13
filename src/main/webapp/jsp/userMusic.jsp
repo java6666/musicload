@@ -133,13 +133,14 @@
     <div class="container-fluid" id="container">
         <div id="row1" class="row">
             <div id="col1" class="col-md-1"></div>
+
             <%--导航栏--%>
             <div id="col2" class="col-md-2">
                 <div class="row" style="height: 30px"></div>
                 <%--导航表格--%>
                 <table id="table1" class="table table-hover">
                     <tr>
-                        <td style="border-top: none">我的歌手(0)</td>
+                        <td style="border-top: none" onclick="showIContent(1)">我的歌手(0)</td>
                     </tr>
                     <tr>
                         <td style="border-top: none" onclick="showCreateBar(this,'createForm')">
@@ -149,8 +150,8 @@
                     <%--如果有显示--%>
                     <%--<c:if test="">--%>
                     <tr class="createForm" style="display: none">
-                            <td style="border-top: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                歌单名
+                            <td style="border-top: none" onclick="showIContent(2)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                歌单名1
                             </td>
                     </tr>
                     <%--</c:if>--%>
@@ -161,15 +162,19 @@
                     </tr>
                    <%-- <c:if test="">--%>
                         <tr class="collectForm" style="display: none">
-                            <td style="border-top: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                歌单名
+                            <td style="border-top: none" onclick="showIContent(3)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                歌单名2
                             </td>
                         </tr>
                     <%--</c:if>--%>
                 </table>
             </div>
+
+            <%--内容块--%>
             <div id="col3" class="col-md-7" style="position: relative">
-                <div id="content-1" style="display: none">
+
+                <%--内容块儿1--%>
+                <div id="content-1" style="display: block">
                     <div class="content-x-top">
                         <h3 class="content-x-top-h1">我的歌手(0)</h3>
                     </div>
@@ -185,16 +190,120 @@
                         </tr>
                     </table>
                 </div>
-                <div id="content-2">
-                    <div class="content-x-top">
+                <div id="content-2" style="display: none">
+                    <div class="content-x-top" style="border-bottom: none">
                         <table class="table">
                             <tr>
                                 <td style="height: 150px;width: 150px">
-                                    <img src="" style="height: 150px;width: 150px">
+                                    <img src="<c:url value="/webmusicpages/images/singerImages/6.jpg"/>" style="height: 150px;width: 150px">
+                                </td>
+                                <td style="height: 150px;width: 450px">
+                                    <h6 style="font-weight: lighter"><span style="color: red">◆</span>歌单名1</h6>
+                                    <p>
+                                        <span style="color: #3276b1;font-size: 16px">
+                                            &nbsp;&nbsp;&nbsp;创建日期：
+                                        </span>
+                                        date&nbsp;创建
+                                    </p>
+                                    <p>
+                                        &nbsp;&nbsp;
+                                        <button class="btn btn-default">
+                                            <a>播放</a>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <a>下载</a>
+                                        </button>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="page-header" style="margin-bottom: 0;padding-bottom: 0;font-weight: lighter">
+                            <h6>
+                                歌曲列表
+                                <small>歌曲数量</small>
+                            </h6>
+                        </div>
+                        <table class="table table-striped" style="border-top: solid red 2px">
+                            <tr style="background-color: #f5f5f5">
+                                <td style="border: solid 1px gainsboro;font-size: 14px">
+                                    歌曲名
+                                </td>
+                                <td style="border: solid 1px gainsboro;font-size: 14px">时长</td>
+                                <td style="border: solid 1px gainsboro;font-size: 14px">歌手</td>
+                                <td style="border: solid 1px gainsboro;font-size: 14px">专辑</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 14px">1</td>
+                                <td style="font-size: 14px">1</td>
+                                <td style="font-size: 14px">1</td>
+                                <td style="font-size: 14px">1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="content-3" style="display: none">
+                    <div class="content-x-top" style="border-bottom: none">
+                        <table class="table">
+                            <tr>
+                                <td style="height: 150px;width: 150px">
+                                    <img src="<c:url value="/webmusicpages/images/singerImages/6.jpg"/>" style="height: 150px;width: 150px">
                                 </td>
                                 <td style="height: 150px;width: 450px">
                                     <h6 style="font-weight: lighter"><span style="color: red">◆</span>歌单名</h6>
+                                    <p>
+                                        <span style="color: #3276b1;font-size: 16px">
+                                            &nbsp;&nbsp;&nbsp;创建日期：
+                                        </span>
+                                        date&nbsp;创建
+                                    </p>
+                                    <p>
+                                        &nbsp;&nbsp;
+                                        <button class="btn btn-default">
+                                            <a>播放</a>
+                                        </button>
+                                        <button class="btn btn-default">
+                                            <a>下载</a>
+                                        </button>
+                                    </p>
                                 </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="page-header" style="margin-bottom: 0;padding-bottom: 0;font-weight: lighter">
+                            <h6>
+                                歌曲列表
+                                <small>歌曲数量</small>
+                            </h6>
+                        </div>
+                        <table class="table table-striped" style="border-top: solid red 2px">
+                            <tr style="background-color: #f5f5f5">
+                                <td style="border: solid 1px gainsboro;font-size: 14px">
+                                    歌曲名
+                                </td>
+                                <td style="border: solid 1px gainsboro;font-size: 14px">时长</td>
+                                <td style="border: solid 1px gainsboro;font-size: 14px">歌手</td>
+                                <td style="border: solid 1px gainsboro;font-size: 14px">专辑</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 14px">1</td>
+                                <td style="font-size: 14px">1</td>
+                                <td style="font-size: 14px">1</td>
+                                <td style="font-size: 14px">1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
                             </tr>
                         </table>
                     </div>
@@ -214,8 +323,13 @@
                 mark.style.color="black";
             }else {
                 createForms[i].style.display="block";
-                mark.style.color="red";
+                mark.style.color="gray";
             }
+        }
+    }
+    function showIContent(index) {
+        for (var i=1;i<=3;i++){
+         document.getElementById("content-"+i).style.display=i==index? "block":"none";
         }
     }
 </script>
