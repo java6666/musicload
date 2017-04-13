@@ -13,7 +13,9 @@ div span{
     width: 150px;
     margin-top: 50px;
     margin-left: 50px;
-
+}
+.download-font{
+    color: red;
 }
 .ranking-title{
     padding-left: 20px;
