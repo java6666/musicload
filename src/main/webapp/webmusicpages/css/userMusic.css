@@ -25,6 +25,7 @@
 }
 
 #content-1{
+    display: none;/*隐藏*/
     position: absolute;
     left: 30px;
     height: 100px;
@@ -37,4 +38,11 @@
 .content-x-top-h1{
     margin-top: 0;
     font-weight: lighter;
+}
+
+#content-2{
+    position: absolute;
+    left: 30px;
+    height: 100px;
+    width: 640px;
 }
