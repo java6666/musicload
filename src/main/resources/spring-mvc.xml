@@ -11,6 +11,7 @@
     <mvc:annotation-driven/>
     <!--开启静态资源管理,匹配不到的给tomcat-->
     <mvc:default-servlet-handler/>
+
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
 
@@ -20,4 +21,35 @@
         <!-- 指定所上传文件的总大小不能超过200MB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
         <property name="maxUploadSize" value="20000000"/>
     </bean>
+
+    <!--jackson配置-->
+    <!--start:使用Jackson 2.x的配置，需要导入的jar包：jackson-core-xxx.jar、jackson-annotations-xxx.jar、jackson-databind-xxx.jar-->
+    <!--通过处理器映射DefaultAnnotationHandlerMapping来开启支持@Controller注解-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+    <!--通过处理器适配器AnnotationMethodHandlerAdapter来开启支持@RequestMapping注解-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <!-- 设置返回字符串编码 -->
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name = "supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                            <value>application/json;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+                <!-- json转换器 -->
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value> <!--拦截处理html-->
+                            <value>application/json;charset=UTF-8</value> <!--拦截处理json-->
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <!--end:使用Jackson 2.x的配置，需要导入的jar包：jackson-core-xxx.jar、jackson-annotations-xxx.jar、jackson-databind-xxx.jar-->
 </beans>

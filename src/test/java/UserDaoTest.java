@@ -12,10 +12,10 @@ import java.util.List;
 
 /**
  * UserDao测试
- * author: 陈誉巧
+ * @author: 陈誉巧
  */
 
-@Ignore
+@Ignore /* 此测试类将不会被执行 */
 public class UserDaoTest {
     private ApplicationContext context = new ClassPathXmlApplicationContext("spring-mybatis.xml");
     private UserDao userDao = context.getBean(UserDao.class);
@@ -23,7 +23,6 @@ public class UserDaoTest {
 
     /*测试查询所有用户*/
     @Test
-    @Ignore
     public void testSelectAll() {
         List<User> users = userDao.selectAll();
         for (User user : users) {
@@ -36,7 +35,6 @@ public class UserDaoTest {
 
     /*测试通过用户名查询*/
     @Test
-    @Ignore
     public void testSelectByUserName() {
         User user = userDao.selectByUserName("tom");
         System.out.println(user.getUserName());
@@ -46,7 +44,6 @@ public class UserDaoTest {
 
 
     @Test
-    @Ignore
     public void testInsertUser(){
         boolean result = userDao.insertUser("rose", "77049");
         System.out.println(result);
@@ -54,7 +51,6 @@ public class UserDaoTest {
 
 
     @Test
-    @Ignore
     public void testUpdatePassword(){
         User user = new User();
         user.setUserName("rose");
@@ -65,7 +61,6 @@ public class UserDaoTest {
 
 
     @Test
-    @Ignore
     public void testUpdateUserHeadName(){
         User user = new User();
         user.setUserName("rose");
@@ -75,7 +70,6 @@ public class UserDaoTest {
     }
 
     @Test
-    @Ignore
     public void testSelectAllUserMusic(){
         List<UserMusic> userMusics = userMusicDao.selectAll();
         System.out.println(userMusics);
