@@ -194,3 +194,26 @@ INSERT INTO `user` VALUES ('jack', '66036', 'jackHead', null, null, null, null);
 INSERT INTO `user` VALUES ('meimei', '88064', 'meimeiHead', null, null, null, null);
 INSERT INTO `user` VALUES ('rose', '77049', 'roseHead', null, null, null, null);
 INSERT INTO `user` VALUES ('tom', '77049', 'tomHead', '因为有悔，所以披星戴月；因为有梦，所以奋不顾身。', '7', '0', 'java');
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for user_singer
+-- ----------------------------
+DROP TABLE IF EXISTS `user_singer`;
+CREATE TABLE `user_singer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(16) DEFAULT NULL,
+  `singer_id` int(11) DEFAULT NULL,
+  `singer_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of user_singer
+-- ----------------------------
+INSERT INTO `user_singer` VALUES ('1', 'tom', '2', '伍佰');
+INSERT INTO `user_singer` VALUES ('2', 'tom', '1001', '张惠妹');
+INSERT INTO `user_singer` VALUES ('3', 'tom', '1002', '郑智化');
+INSERT INTO `user_singer` VALUES ('4', 'tom', '1003', '陈绮贞');
+INSERT INTO `user_singer` VALUES ('5', 'tom', '1004', '包娜娜');

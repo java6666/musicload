@@ -22,6 +22,7 @@ public class UserMusicController {
         /*用户收藏的歌手*/
         List<UserSinger> userSingers = userSingerDao.selectAllUserSinger();
         model.addAttribute("userSingers",userSingers);
+        /* 用户创建的歌单 */
         return null;
     }
 }
