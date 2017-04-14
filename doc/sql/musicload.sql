@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 我的连接
-Source Server Version : 50530
+Source Server         : 本地连接
+Source Server Version : 50554
 Source Host           : localhost:3306
 Source Database       : musicload
 
 Target Server Type    : MYSQL
-Target Server Version : 50530
+Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-12 16:40:03
+Date: 2017-04-14 17:46:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,9 +20,10 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `album`;
 CREATE TABLE `album` (
-  `album_id` int(255) NOT NULL,
+  `album_id` int(255) NOT NULL AUTO_INCREMENT,
   `album_name` varchar(255) DEFAULT NULL,
   `singer_id` int(11) DEFAULT NULL,
+  `introduction` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`album_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -117,6 +118,7 @@ CREATE TABLE `singer` (
 -- ----------------------------
 -- Records of singer
 -- ----------------------------
+INSERT INTO `singer` VALUES ('2', '伍佰');
 INSERT INTO `singer` VALUES ('10001', '张惠妹');
 INSERT INTO `singer` VALUES ('10002', '郑智化');
 INSERT INTO `singer` VALUES ('10003', '陈绮贞');
@@ -133,13 +135,23 @@ INSERT INTO `singer` VALUES ('10203', '阿杜');
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `user_name` varchar(255) NOT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `user_image` varchar(255) DEFAULT NULL,
+  `user_name` varchar(16) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `user_head_name` varchar(255) DEFAULT NULL,
+  `signature` varchar(255) DEFAULT NULL,
+  `level` smallint(2) DEFAULT NULL,
+  `gender` tinyint(1) DEFAULT NULL,
+  `hobby` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('jack', '66036', 'jackHead', null, null, null, null);
+INSERT INTO `user` VALUES ('meimei', '88064', 'meimeiHead', null, null, null, null);
+INSERT INTO `user` VALUES ('rose', '77049', 'roseHead', null, null, null, null);
+INSERT INTO `user` VALUES ('tom', '77049', 'tomHead', '因为有悔，所以披星戴月；因为有梦，所以奋不顾身。', '7', '0', 'java');
 
 -- ----------------------------
 -- Table structure for user_music
@@ -170,33 +182,6 @@ INSERT INTO `user_music` VALUES ('9', '9', 'tom', '土耳其冰淇淋', '周杰�
 INSERT INTO `user_music` VALUES ('10', '10', 'tom', '告白气球', '周杰伦', '2017-04-12 16:14:38');
 INSERT INTO `user_music` VALUES ('11', '11', 'tom', '爱情废柴', '周杰伦', '2017-04-12 16:14:42');
 
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for user
--- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `user_name` varchar(16) NOT NULL,
-  `password` varchar(16) NOT NULL,
-  `user_head_name` varchar(255) DEFAULT NULL,
-  `signature` varchar(255) DEFAULT NULL,
-  `level` smallint(2) DEFAULT NULL,
-  `gender` tinyint(1) DEFAULT NULL,
-  `hobby` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES ('jack', '66036', 'jackHead', null, null, null, null);
-INSERT INTO `user` VALUES ('meimei', '88064', 'meimeiHead', null, null, null, null);
-INSERT INTO `user` VALUES ('rose', '77049', 'roseHead', null, null, null, null);
-INSERT INTO `user` VALUES ('tom', '77049', 'tomHead', '因为有悔，所以披星戴月；因为有梦，所以奋不顾身。', '7', '0', 'java');
-
-SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for user_singer
 -- ----------------------------
@@ -216,4 +201,3 @@ INSERT INTO `user_singer` VALUES ('1', 'tom', '2', '伍佰');
 INSERT INTO `user_singer` VALUES ('2', 'tom', '1001', '张惠妹');
 INSERT INTO `user_singer` VALUES ('3', 'tom', '1002', '郑智化');
 INSERT INTO `user_singer` VALUES ('4', 'tom', '1003', '陈绮贞');
-INSERT INTO `user_singer` VALUES ('5', 'tom', '1004', '包娜娜');

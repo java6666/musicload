@@ -140,7 +140,7 @@
                 <%--导航表格--%>
                 <table id="table1" class="table table-hover">
                     <tr>
-                        <td style="border-top: none" onclick="showIContent(1)">我的歌手(0)</td>
+                        <td style="border-top: none" onclick="showIContent(1)">我的歌手(${userSingers.size()})</td>
                     </tr>
                     <tr>
                         <td style="border-top: none" onclick="showCreateBar(this,'createForm')">
@@ -176,18 +176,20 @@
                 <%--内容块儿1--%>
                 <div id="content-1" style="display: block">
                     <div class="content-x-top">
-                        <h3 class="content-x-top-h1">我的歌手(0)</h3>
+                        <h3 class="content-x-top-h1">我的歌手(${userSingers.size()})</h3>
                     </div>
                     <table class="table">
-                        <tr style="border-bottom: solid gainsboro 1px">
-                            <td style="width:100px;height:100px">
-                                <img src="<c:url value="/webmusicpages/images/singerImages/2.jpg"/>" style="height: 100px;width: 100px"/>
-                            </td>
-                            <td style="width:500px;height:100px">
-                                <h6>伍佰</h6>
-                                <p>28个专辑</p>
-                            </td>
-                        </tr>
+                        <c:forEach items="${userSingers}" var="item">
+                            <tr style="border-bottom: solid gainsboro 1px">
+                                <td style="width:100px;height:100px">
+                                    <img src="<c:url value="/webmusicpages/images/singerImages/${item.singerId}.jpg"/>" style="height: 100px;width: 100px"/>
+                                </td>
+                                <td style="width:500px;height:100px">
+                                    <h6>${item.singerName}</h6>
+                                    <p>28个专辑</p>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </table>
                 </div>
                 <div id="content-2" style="display: none">
